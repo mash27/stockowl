@@ -1,3 +1,3 @@
 class StockHistory < ApplicationRecord
-  belongs_to :stock
+  belongs_to :investor_stock
 end

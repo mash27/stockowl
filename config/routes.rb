@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get '/pages/contact_us', to: 'pages#contact_us'
 
   resources :investors, only: [:index, :show]
+
   resource :account, only: [:show, :edit, :update]
-  resource :portfolio, only: [:show]
-  resources :portfolio_trackers, only: [:create, :new] do
+  resource :tracker, only: [:show, :destroy]
+  resources :user_stocks, only: [:create, :new, :destroy] do
     resources :operations, only: [:create]
   end
 end
