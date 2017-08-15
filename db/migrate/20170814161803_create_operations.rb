@@ -1,10 +1,12 @@
 class CreateOperations < ActiveRecord::Migration[5.0]
   def change
     create_table :operations do |t|
-      t.integer :number_of_shares
-      t.integer :stock_price
+
       t.boolean :sold
-      t.references :portfolio_tracker, foreign_key: true
+      t.integer :stock_purchase_price
+      t.integer :number_of_shares
+      t.integer :user_stock_id
+      t.references :user_stock, foreign_key: true
 
       t.timestamps
     end
