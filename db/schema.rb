@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170815150414) do
     t.string   "company_name"
     t.string   "sector"
     t.integer  "current_price"
+
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "shares_outstanding"
