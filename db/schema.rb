@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814161803) do
+ActiveRecord::Schema.define(version: 20170815150414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20170814161803) do
     t.string   "last_name"
     t.string   "fund_name"
     t.date     "last_update"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "portfolio_value"
   end
 
   create_table "operations", force: :cascade do |t|
@@ -69,8 +70,10 @@ ActiveRecord::Schema.define(version: 20170814161803) do
     t.string   "company_name"
     t.string   "sector"
     t.integer  "current_price"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "shares_outstanding"
   end
 
   create_table "user_stocks", force: :cascade do |t|

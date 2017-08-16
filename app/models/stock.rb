@@ -1,4 +1,7 @@
 class Stock < ApplicationRecord
-  belongs_to :investor_stock
-  belongs_to :user_stock
+  has_many :investor_stocks
+  has_many :investors, through: :investor_stocks
+
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
 end
