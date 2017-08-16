@@ -1,0 +1,18 @@
+<% highlighted_article =  @api_response.first["articles"].first %>
+<div class="home-news-card">
+  <%= link_to highlighted_article["url"] do %>
+    <div class="home-news-image" style="background-image: url('<%= highlighted_article["urlToImage"] %>')">
+    </div>
+  <% end %>
+  <div class="home-news-card-content">
+    <%= link_to highlighted_article["url"] do %>
+      <h4><%= highlighted_article["title"] %></h4>
+      <p>By: <%= highlighted_article["author"] %> | <%= highlighted_article["publishedAt"] %></p>
+      <p><%= highlighted_article["description"] %></p>
+    <% end %>
+
+    <div class="home-news-main-site">
+    <%= link_to "www.bloomberg.com" %>
+    </div>
+  </div>
+</div>
