@@ -1,0 +1,14 @@
+<div class="home-news-card">
+  <% @api_response.first["articles"].first(4).each do |article| %>
+  <div class="col-xs-12 col-sm-12">
+    <div class="home-news-card-content">
+      <%= link_to article["url"] do %>
+      <h5><%= article["title"] %></h5>
+      <% end %>
+      <div class="home-news-main-site">
+        <%= link_to "www.bloomberg.com" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

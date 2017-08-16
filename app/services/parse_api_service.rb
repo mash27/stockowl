@@ -6,7 +6,7 @@ class ParseApiService
 
   def searcher
     # Get the API url and insert your search term as a parameter
-    api_url = "https://newsapi.org/v1/articles?source=financial-times&sortBy=top&apiKey=#{ENV['API_KEY_FINANCIAL_TIMES']}"
+    api_url = "https://newsapi.org/v1/articles?source=bloomberg&sortBy=top&apiKey=#{ENV['API_KEY_FINANCIAL_TIMES']}"
     news_get = []
 
     # Use open-uri to get data from the url
