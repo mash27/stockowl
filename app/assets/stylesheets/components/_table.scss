@@ -1,0 +1,18 @@
+th, td {
+  padding: 10px;
+}
+
+table.highlighter {
+  tr {
+    background-color: $light-gray;
+    transition: background-color 800ms ease;
+    &:hover {
+      background-color: #dbe3ff;
+    }
+  }
+  .hidden-table {
+    strong {
+      color: blue;
+    }
+  }
+}

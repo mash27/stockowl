@@ -1,2 +1,25 @@
 <h1>Investors#show</h1>
 <p>Find me in app/views/investors/show.html.erb</p>
+
+
+<%= render partial: "shared/investor" %>
+
+<table class="highlighter">
+
+  <%= render partial: "shared/theader" %>
+
+  <tbody>
+    <% @investor.stocks.each do |stock| %>
+    <tr>
+      <%= render partial: "shared/stock", locals: { stock: stock } %>
+
+      <% stock.stock_histories.each do |stock_history| %>
+      <%= render partial: "shared/stock_history", locals: { stock_history: stock_history } %>
+      <% end %>
+    </tr>
+    <% stock.stock_histories.each do |stock_history| %>
+    <%= render partial: "shared/hidden_table", locals: { stock_history: stock_history} %>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

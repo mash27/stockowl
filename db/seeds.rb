@@ -55,6 +55,13 @@ investor_einhorn = Investor.create!({ first_name: 'David', last_name: 'Einhorn',
 investor_loeb = Investor.create!({ first_name: 'Dan', last_name: 'Loeb', fund_name: 'Third Point, LLC', portfolio_value: '$11,282 Mil', last_update: "",
   photo: ""
   })
+investor_ackman = Investor.create!({ first_name: 'Bill', last_name: 'Ackman', fund_name: 'Pershing Square Capital Management, L.P.', portfolio_value: '$6,015 Mil', last_update: "",
+  # avatar: ""
+  })
+investor_rolfe = Investor.create!({ first_name: 'David', last_name: 'Rolfe', fund_name: 'Wedgewood Partners, Inc.', portfolio_value: '$3,265 Mil', last_update: "",
+  # avatar: ""
+  })
+
 
 puts "Creating stocks..."
 stock_agn = Stock.create!({ ticker: "AGN", company_name: "Allergan plc", sector: "Healthcare", current_price: 232 })
@@ -75,11 +82,6 @@ stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stoc
 puts "Creating stock histories..."
 StockHistory.create!(
   investor_stock: stock_tepper_agn,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
   market_cap: 78000,
   shares: 1000,
   value: 250000,
@@ -89,15 +91,15 @@ StockHistory.create!(
   percentage_shares_outstanding: 0.75,
   three_month_percentage_change: 1,
   ytd_percentage_change: 12,
+  quarter: "2nd 2017",
+  shares_bought_sold: 500,
+  percentage_change: 100,
+  quarter_end_shares: 1000,
+  avg_price: 250,
 )
 
 StockHistory.create!(
   investor_stock: stock_tepper_goog,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
   market_cap: 78000,
   shares: 1000,
   value: 250000,
@@ -107,15 +109,15 @@ StockHistory.create!(
   percentage_shares_outstanding: 0.75,
   three_month_percentage_change: 1,
   ytd_percentage_change: 12,
+  quarter: "2nd 2017",
+  shares_bought_sold: 500,
+  percentage_change: 100,
+  quarter_end_shares: 1000,
+  avg_price: 250,
 )
 
 StockHistory.create!(
   investor_stock: stock_tepper_baba,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
   market_cap: 78000,
   shares: 1000,
   value: 250000,
@@ -125,6 +127,11 @@ StockHistory.create!(
   percentage_shares_outstanding: 0.75,
   three_month_percentage_change: 1,
   ytd_percentage_change: 12,
+  quarter: "2nd 2017",
+  shares_bought_sold: 500,
+  percentage_change: 100,
+  quarter_end_shares: 1000,
+  avg_price: 250,
 )
 
 puts "Finished!"

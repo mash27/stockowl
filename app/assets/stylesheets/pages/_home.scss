@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.home-news-card {
+  margin: 10px auto;
+  background-color: white;
+  max-width: 400px;
+  font-size: 14px;
+  h4{
+    border-top: 0;
+    }
+  p{
+    font-size: 14px;
+    margin-top: 0px;
+    }
+  position: relative;
+}
+
+.home-news-card-content{
+  font-size: 14px;
+  padding: 10px;
+  background-color: white;
+
+}
+
+.home-news-main-site {
+  font-size: 12px;
+}
+
+.home-news-image {
+  height: 200px;
+  width: 100%;
+  background-size: cover !important;
+  background-position: center;
+}
+
