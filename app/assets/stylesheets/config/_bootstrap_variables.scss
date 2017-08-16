@@ -10,12 +10,12 @@ $body-bg:                 $light-gray;
 $font-size-base: 18px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
-$brand-success:   $green;
-$brand-info:      $yellow;
-$brand-danger:    $red;
-$brand-warning:   $orange;
+$gray-base:       #000000;
+$brand-primary:   #469AE0;
+$brand-success:   #32B796;
+$brand-info:      #FDB631;
+$brand-danger:    #EE5F5B;
+$brand-warning:   #E67E22;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
@@ -23,3 +23,9 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+// $red: #EE5F5B;
+// $blue: #469AE0;
+// $yellow: #FDB631;
+// $orange: #E67E22;
+// $green: #32B796;
+// $gray: #000000;
