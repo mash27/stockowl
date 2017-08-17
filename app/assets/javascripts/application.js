@@ -1,17 +1,22 @@
 //= require jquery
-//= require jquery_ujs
 //= require materialize-sprockets
-//= require bootstrap-sprockets
+//= require jquery_ujs
 //= require_tree .
 
-$( ".highlighter tr" ).click(function() {
-  if (!$(this).hasClass('hidden-table')) {
+// $( ".highlighter tr" ).click(function() {
+//   if (!$(this).hasClass('hidden-table')) {
 
-  $(this).next().slideDown( "slow", function() {
-    console.log('sliding is happening')
-    $(this).toggleClass('hidden')
-    // Animation complete.
+//   $(this).next().slideDown( "slow", function() {
+//     console.log('sliding is happening')
+//     $(this).toggleClass('hidden')
+//     // Animation complete.
+//   });
+
+//   }
+// });
+
+ $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
   });
 
-  }
-});
