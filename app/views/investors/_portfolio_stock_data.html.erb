@@ -1,41 +1,41 @@
 <td>
   <p>
-    <%= portfolio_stock_data.market_cap %>
+    <%= investor_stock.stock.market_cap_in_millions %>
   </p>
 </td>
 <td>
   <p>
-    <%= portfolio_stock_data.shares %>
+    <%= investor_stock.shares_total_count %>
   </p>
 </td>
 <td>
   <p>
-    <%= portfolio_stock_data.value %>
+    <%= investor_stock.latest_quarter_shares_total_value %>
   </p>
 </td>
 <td>
   <p>
-    <%= portfolio_stock_data.percentage_weight %>
+    <%= investor_stock.percentage_weight_compared_to_portfolio_total_value %>
+  </p>
+</td>
+<!-- <td>
+  <p>
+  TODO when at least one qurter will be present on an investor_stock: percentage_change_in_owned_shares_from_last_quarter
+  </p>
+</td> -->
+<td>
+  <p>
+    <%= investor_stock.percentage_shares_outstanding %>
   </p>
 </td>
 <td>
   <p>
-    <%= portfolio_stock_data.percentage_share_change_from_last_q %>
+    <%= investor_stock.stock.percentage_three_last_months_price_change %>
   </p>
 </td>
 <td>
   <p>
-    <%= portfolio_stock_data.percentage_shares_outstanding %>
-  </p>
-</td>
-<td>
-  <p>
-    <%= portfolio_stock_data.three_month_percentage_change %>
-  </p>
-</td>
-<td>
-  <p>
-    <%= portfolio_stock_data.ytd_percentage_change %>
+    <%= investor_stock.stock.percentage_year_to_date_price_change %>
   </p>
 </td>
 
