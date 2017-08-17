@@ -1,14 +1,7 @@
 class InvestorsController < ApplicationController
   def index
+    @investors = Investor.all
   end
-
-  # def show
-  #   @investor = investor.find(params[:id])
-  #   # Build all the current daily series price for all stocks of this investor
-  #   @investor.stocks
-
-  # end
-
 
   def show
     @investor = Investor.find(params[:id])

@@ -1,2 +1,21 @@
-<h1>Investors#index</h1>
-<p>Find me in app/views/investors/index.html.erb</p>
+ <div class="investors-container">
+  <div class="container" style="width:80%">
+    <div class="row">
+      <% @investors.each do |investor| %>
+      <div class="col-xs-4">
+        <div class="investor-card-description">
+          <%= image_tag "David_Tepper.jpg", class: "card-user" %>
+          <a class="card-link" href="#" ></a>
+          <h3 class="i-name"><%= investor.first_name %> <%= investor.last_name %></h3>
+          <p class="f-name"><%= investor.fund_name %></p>
+          <p class="p-value"><%= investor.portfolio_value %></p>
+          <div class="view-btn-container">
+            <%= link_to "View", investor_path(investor), class: "view-btn"%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

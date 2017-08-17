@@ -1,0 +1,51 @@
+<table class="highlighter">
+  <thead>
+    <th>
+      Quarter
+    </th>
+    <th>
+      Shares bought/sold
+    </th>
+    <th>
+      % Change
+    </th>
+    <th>
+      Quarter End Shares
+    </th>
+    <th>
+      Average Price
+    </th>
+  </thead>
+
+  <tbody>
+    <% stock.portfolio_stock_data.each do |portfolio_stock_datum| %>
+      <tr>
+        <td>
+          <p>
+            <%= portfolio_stock_datum.quarter %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= portfolio_stock_datum.shares_bought_sold %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= portfolio_stock_datum.percentage_change %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= portfolio_stock_datum.quarter_end_shares %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= portfolio_stock_datum.avg_price %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
