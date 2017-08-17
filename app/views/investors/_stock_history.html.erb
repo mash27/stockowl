@@ -18,31 +18,31 @@
   </thead>
 
   <tbody>
-    <% stock.portfolio_stock_data.each do |portfolio_stock_datum| %>
+    <% investor_stock_quarters.each do |investor_stock_quarter| %>
       <tr>
         <td>
           <p>
-            <%= portfolio_stock_datum.quarter %>
+            <%= investor_stock_quarter.designation %>
           </p>
         </td>
         <td>
           <p>
-            <%= portfolio_stock_datum.shares_bought_sold %>
+            <%= investor_stock_quarter.traded_shares_count %>
           </p>
         </td>
         <td>
           <p>
-            <%= portfolio_stock_datum.percentage_change %>
+            <%= investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter %>
           </p>
         </td>
         <td>
           <p>
-            <%= portfolio_stock_datum.quarter_end_shares %>
+            <%= investor_stock_quarter.shares_count_at_the_end %>
           </p>
         </td>
         <td>
           <p>
-            <%= portfolio_stock_datum.avg_price %>
+            <%= investor_stock_quarter.stock_average_price %>
           </p>
         </td>
       </tr>

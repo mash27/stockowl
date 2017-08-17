@@ -5,6 +5,7 @@ class InvestorsController < ApplicationController
 
   def show
     @investor = Investor.find(params[:id])
+
     # Build all the current daily series price for all stocks of this investor
     # @stocks = @investor.stocks.map do |stock|
     #   daily_price_serie = GetCurrentDailyPriceSeriesForStockService.new(stock.ticker).call

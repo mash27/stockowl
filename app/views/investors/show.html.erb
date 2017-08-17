@@ -44,28 +44,26 @@
     </tr>
   </thead>
   <tbody>
-    <% @investor.stocks.each do |stock| %>
+    <% @investor.investor_stocks.each do |investor_stock| %>
     <tr>
-      <%= render partial: "stock", locals: { stock: stock } %>
-      <% stock.portfolio_stock_data.each do |portfolio_stock_data| %>
-        <%= render partial: "portfolio_stock_data", locals: { portfolio_stock_data: portfolio_stock_data } %>
-      <% end %>
+      <%= render partial: "stock", locals: { stock: investor_stock.stock } %>
+      <%= render partial: "portfolio_stock_data", locals: { investor_stock: investor_stock } %>
       <td>
-        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= stock.id %>">History</button>
+        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>">History</button>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<% @investor.stocks.each do |stock| %>
+<% @investor.investor_stocks.each do |investor_stock| %>
 <!-- Modal Structure -->
-  <div id="modal<%= stock.id %>" class="modal bottom-sheet">
+  <div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
     <div class="modal-content">
       <div class="row">
         <div class="col-xs-8">
           <h4>Stock history</h4>
-          <%= render partial: "stock_history", locals: { stock: stock } %>
+          <%= render partial: "stock_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
         </div>
         <div class="col-xs-4">
 
