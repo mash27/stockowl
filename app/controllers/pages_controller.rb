@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @api_response = ParseApiService.new.searcher
+
   end
 
   def tour

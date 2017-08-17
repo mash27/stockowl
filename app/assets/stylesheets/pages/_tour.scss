@@ -1,0 +1,38 @@
+.tour-card {
+  margin: 50px auto;
+  background-color: white;
+  max-width: 200px;
+  font-size: 14px;
+  text-align: left;
+  h4{
+    border-top: 0;
+    }
+  p{
+    font-size: 14px;
+    margin-top: 0px;
+    }
+  position: relative;
+}
+
+.tour-benefits {
+  margin: 50px auto;
+  background-color: white;
+  max-width: 200px;
+  font-size: 14px;
+  text-align: left;
+  h4{
+    border-top: 0;
+    }
+  p{
+    font-size: 14px;
+    margin-top: 0px;
+    }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
+
