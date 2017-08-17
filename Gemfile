@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
 gem 'yahoo-finance'
+gem 'carrierwave', '~> 0.11.2'
+gem 'cloudinary'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
