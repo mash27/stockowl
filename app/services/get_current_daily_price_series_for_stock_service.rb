@@ -4,6 +4,7 @@ class GetCurrentDailyPriceSeriesForStockService
 
   def initialize(company_ticker)
     @company_ticker = company_ticker
+    p @company_ticker
   end
 
   def call
@@ -14,6 +15,20 @@ class GetCurrentDailyPriceSeriesForStockService
     # 3. Parse the payload to get proper ruby objects
     data = JSON.parse(json_payload)
 
-    return data["Time Series (Daily)"].first
+    date, daily_price_serie_data = data["Time Series (Daily)"].first
+    average_daily_price = daily_price_serie_data.values[0..3].map(&:to_f).reduce(:+) / 4
+
+    formatted_data = {
+      date: date,
+      daily_price_serie_data: {
+        open: daily_price_serie_data["1. open"],
+        high: daily_price_serie_data["2. high"],
+        low: daily_price_serie_data["3. low"],
+        close: daily_price_serie_data["4. close"],
+        average: average_daily_price,
+        volume: daily_price_serie_data["5. volume"],
+      }
+    }
+    return formatted_data
   end
 end
