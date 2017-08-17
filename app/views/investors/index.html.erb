@@ -1,21 +1,52 @@
  <div class="investors-container">
-  <div class="container" style="width:80%">
+  <div class="container-fluid">
     <div class="row">
-      <% @investors.each do |investor| %>
-      <div class="col-xs-4">
-        <div class="investor-card-description">
-          <%= image_tag "David_Tepper.jpg", class: "card-user" %>
-          <a class="card-link" href="#" ></a>
-          <h3 class="i-name"><%= investor.first_name %> <%= investor.last_name %></h3>
-          <p class="f-name"><%= investor.fund_name %></p>
-          <p class="p-value"><%= investor.portfolio_value %></p>
-          <div class="view-btn-container">
-            <%= link_to "View", investor_path(investor), class: "view-btn"%>
+      <div class="col-xs-6">
+        <div class="preview-box">
+          <div id="preview" class="investor-card-highlighted">
+
+            <div class="content">
+            <%= image_tag @investors.first.photo %>
+              <a class="card-link" href="#" ></a>
+              <h3 class="i-name"><%= @investors.first.first_name %> <%= @investors.first.last_name %></h3>
+              <p class="f-name"><%= @investors.first.fund_name %></p>
+              <p class="p-value"><%= @investors.first.portfolio_value %></p>
+              <div class="view-btn-container">
+                <%= link_to "View", investor_path(@investors.first), class: "view-btn"%>
+              </div>
+            </div>
+          <ul class="stocks"></ul>
           </div>
         </div>
       </div>
-      <% end %>
+      <div class="col-xs-6">
+        <% @investors.each do |investor| %>
+        <div class="col-xs-12">
+          <div class="investor-card-description">
+            <%= image_tag investor.photo %>
+
+            <div class="content">
+              <a class="card-link" href="#" ></a>
+              <h3 class="i-name"><%= investor.first_name %> <%= investor.last_name %></h3>
+              <p class="f-name"><%= investor.fund_name %></p>
+              <p class="p-value"><%= investor.portfolio_value %></p>
+              <div class="view-btn-container">
+                <%= link_to "View", investor_path(investor), class: "view-btn"%>
+              </div>
+            </div>
+            <div class="content-for-preview hidden">
+              <ul>
+                <% investor.stocks.each do |stock| %>
+                <li>
+                  <%= stock.company_name %>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
