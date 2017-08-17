@@ -16,6 +16,33 @@
     margin-top: 0;
   }
 }
+
+#preview {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 191px;
+  }
+  ul {
+    li {
+      line-height: 39px;
+      text-align: right;
+      font-variant: petite-caps;
+    }
+  }
+  .content {
+    flex: 0 0 50%;
+  }
+}
+
+.investor-card-highlighted {
+  height: 100vh;
+  position: fixed;
+  top: 70px;
+  width: 500px;
+}
+
 .card-reservation-container {
   position: absolute;
   bottom: -100px;
@@ -26,15 +53,29 @@
   color: grey;
 }
 .investor-card-description {
-height: 400px;
-    justify-content: space-around;
-    margin: 20px 5px;
-  background-color: rgba(166, 168, 171, 0.42);
-  padding: 15px;
+  margin: 20px 0px;
+  box-shadow: 2px 2px 8px rgba(1,1,1,0.2);
+  border-radius: 2px;
+  margin: 20px 0px;
+  justify-content: space-between;
+  margin: 20px 5px;
+  background-color: rgba(232, 234, 237, 0.42);
   display: flex;
-  flex-direction: column;
+  min-height: 191px;
   align-items: center;
-  margin: 5px;
+  img {
+    margin: 0;
+    height: 191px;
+    width: 40%;
+  }
+  .content {
+    flex: 0 0 50%;
+    text-align: right;
+    padding-right: 30px;
+    h3 {
+      margin: 0;
+    }
+  }
 }
 .card-reservation-total-price {
   margin-top: 15px;
@@ -62,7 +103,7 @@ height: 400px;
   width: 100%;
 }
 .view-btn {
-  color: white;
+  color: rgba(128, 128, 128, 0.53);
   text-transform: uppercase;
   padding: 5px 10px;
   // border-radius: 2px;
@@ -82,14 +123,26 @@ height: 400px;
   width: 45%;
   border-radius: 50%;
 }
-.f-name {
-  font-size: initial;
-}
+
 .p-value {
   font-style: italic;
+  letter-spacing: 1px;
+  color: #0D5276;
   -webkit-font-smoothing: subpixel-antialiased;
-  // color: rgba(0, 128, 22, 0.72);
 }
+.f-name {
+  font-weight: bolder;
+  font-size: 15px;
+  margin-top: 10px;
+  color: gray;
+}
+// .f-name {
+//   font-size: initial;
+// }
+// .p-value {
+//   font-style: italic;
+//   // color: rgba(0, 128, 22, 0.72);
+// }
 .i-name {
   font-size: 28px;
 }
