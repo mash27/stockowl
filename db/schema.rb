@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816105546) do
+ActiveRecord::Schema.define(version: 20170817130241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170816105546) do
     t.index ["user_stock_id"], name: "index_operations_on_user_stock_id", using: :btree
   end
 
-  create_table "stock_histories", force: :cascade do |t|
+  create_table "portfolio_stock_data", force: :cascade do |t|
     t.string   "quarter"
     t.integer  "investor_stock_id"
     t.integer  "shares_bought_sold"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20170816105546) do
     t.integer  "ytd_percentage_change"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["investor_stock_id"], name: "index_stock_histories_on_investor_stock_id", using: :btree
+    t.index ["investor_stock_id"], name: "index_portfolio_stock_data_on_investor_stock_id", using: :btree
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20170816105546) do
   add_foreign_key "investor_stocks", "investors"
   add_foreign_key "investor_stocks", "stocks"
   add_foreign_key "operations", "user_stocks"
-  add_foreign_key "stock_histories", "investor_stocks"
+  add_foreign_key "portfolio_stock_data", "investor_stocks"
   add_foreign_key "user_stocks", "stocks"
   add_foreign_key "user_stocks", "users"
 end

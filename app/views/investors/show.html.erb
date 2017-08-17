@@ -1,25 +1,79 @@
-<h1>Investors#show</h1>
-<p>Find me in app/views/investors/show.html.erb</p>
+<h1>Investor portfolio</h1>
 
-
-<%= render partial: "shared/investor" %>
+<%= render partial: "investor" %>
 
 <table class="highlighter">
-
-  <%= render partial: "shared/theader" %>
-
+  <thead>
+    <tr>
+      <th>
+        Ticker
+      </th>
+      <th>
+        Company
+      </th>
+      <th>
+        Sector
+      </th>
+      <th>
+        Current Price
+      </th>
+      <th>
+        Market Cap
+      </th>
+      <th>
+        Shares
+      </th>
+      <th>
+        Value
+      </th>
+      <th>
+        % Weight
+      </th>
+      <th>
+        % Share Change from last Q
+      </th>
+      <th>
+        % Shares Outstanding
+      </th>
+      <th>
+        3M % Change
+      </th>
+      <th>
+        YTD % Change
+      </th>
+    </tr>
+  </thead>
   <tbody>
     <% @investor.stocks.each do |stock| %>
     <tr>
-      <%= render partial: "shared/stock", locals: { stock: stock } %>
-
-      <% stock.stock_histories.each do |stock_history| %>
-      <%= render partial: "shared/stock_history", locals: { stock_history: stock_history } %>
+      <%= render partial: "stock", locals: { stock: stock } %>
+      <% stock.portfolio_stock_data.each do |portfolio_stock_data| %>
+        <%= render partial: "portfolio_stock_data", locals: { portfolio_stock_data: portfolio_stock_data } %>
       <% end %>
+      <td>
+        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= stock.id %>">History</button>
+      </td>
     </tr>
-    <% stock.stock_histories.each do |stock_history| %>
-    <%= render partial: "shared/hidden_table", locals: { stock_history: stock_history} %>
-    <% end %>
     <% end %>
   </tbody>
 </table>
+
+<% @investor.stocks.each do |stock| %>
+<!-- Modal Structure -->
+  <div id="modal<%= stock.id %>" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-xs-8">
+          <h4>Stock history</h4>
+          <%= render partial: "stock_history", locals: { stock: stock } %>
+        </div>
+        <div class="col-xs-4">
+
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<% end %>
