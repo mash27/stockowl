@@ -98,7 +98,7 @@
   </tbody>
 </table>
 
-<% @investor.investor_stocks.each do |investor_stock| %>
+<% @investor.investor_stocks.each_with_index do |investor_stock, index| %>
 <!-- Modal Structure -->
 <div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
   <div class="modal-content">
@@ -108,7 +108,7 @@
         <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
       </div>
       <div class="col-xs-6">
-        <%= render partial: "combo_chart", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters, stock_id: investor_stock.stock.id } %>
+        <%= render partial: "combo_chart", locals: { quarters_combo_chart_data: @quarters_combo_chart_data[index], stock_id: investor_stock.stock.id} %>
       </div>
     </div>
   </div>
