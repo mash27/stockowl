@@ -130,14 +130,15 @@
 .p-value {
   font-style: italic;
   letter-spacing: 1px;
-  color: rgba(58, 195, 157, 0.8);
+  color: rgba(138, 43, 33, 0.8);
   -webkit-font-smoothing: subpixel-antialiased;
 }
 .f-name {
   font-weight: bolder;
   font-size: 15px;
   margin-top: 10px;
-  color: gray;
+  color: #333340;
+  font-variant: all-petite-caps;
 }
 // .f-name {
 //   font-size: initial;
@@ -148,6 +149,7 @@
 // }
 .i-name {
   font-size: 28px;
+  color: rgba(51, 51, 51, 0.95);
 }
 .w3-tag.title {
   background-color: #0D5276 !important;
@@ -158,4 +160,9 @@
   position: absolute;
   top: -53px;
   padding-left: 200px;
+}
+.bg-img-investors {
+  background-attachment: fixed;
+  background-size: cover;
+  linear-gradient:(300deg, rgba(59, 103, 177, 0.3) 0%, rgb(244, 244, 244) 50%);
 }
