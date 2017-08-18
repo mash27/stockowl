@@ -46,8 +46,8 @@
   <tbody>
     <% @investor.investor_stocks.each do |investor_stock| %>
     <tr>
-      <%= render partial: "stock", locals: { stock: investor_stock.stock } %>
-      <%= render partial: "portfolio_stock_data", locals: { investor_stock: investor_stock } %>
+      <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
+
       <td>
         <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>">History</button>
       </td>

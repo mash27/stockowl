@@ -1,5 +1,5 @@
 class InvestorStock < ApplicationRecord
   belongs_to :investor
   belongs_to :stock
-  has_many :investor_stock_quarters
+  has_many :investor_stock_quarters, dependent: :destroy
 end
