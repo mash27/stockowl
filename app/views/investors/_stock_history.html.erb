@@ -1,0 +1,51 @@
+<table class="highlighter">
+  <thead>
+    <th>
+      Quarter
+    </th>
+    <th>
+      Shares bought/sold
+    </th>
+    <th>
+      % Change
+    </th>
+    <th>
+      Quarter End Shares
+    </th>
+    <th>
+      Average Price
+    </th>
+  </thead>
+
+  <tbody>
+    <% investor_stock_quarters.each do |investor_stock_quarter| %>
+      <tr>
+        <td>
+          <p>
+            <%= investor_stock_quarter.designation %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= investor_stock_quarter.traded_shares_count %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= investor_stock_quarter.shares_count_at_the_end %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= investor_stock_quarter.stock_average_price %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
