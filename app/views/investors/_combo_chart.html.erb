@@ -5,14 +5,7 @@
 
     function drawVisualizationForModal<%= stock_id %>() {
       // Some raw data (not necessarily accurate)
-      var data = google.visualization.arrayToDataTable([
-       ['Quarter', 'Q End Shares', 'Average price'],
-       ['2015Q1', 1000, 215],
-       ['2015Q2', 1500, 220],
-       ['2015Q3', 2000, 230],
-       ['2015Q4', 1000, 215],
-       ['2016Q1', 500, 200]
-    ]);
+      var data = google.visualization.arrayToDataTable(<%= raw quarters_combo_chart_data.to_json %>);
 
   var options = {
     // title : 'Monthly Coffee Production by Country',

@@ -5,8 +5,8 @@ class InvestorsController < ApplicationController
 
   def show
     @investor = Investor.find(params[:id])
-
-    @sectors_pie_chart_data = @investor.investor_stocks.reduce({}) do |histogram, investor_stock|
+    investor_stocks = @investor.investor_stocks
+    @sectors_pie_chart_data = investor_stocks.reduce({}) do |histogram, investor_stock|
       sector = investor_stock.stock.sector
       if histogram.key?(sector)
        histogram[sector] += 1
@@ -16,6 +16,14 @@ class InvestorsController < ApplicationController
       histogram
     end
     .to_a
+
+    @quarters_combo_chart_data = investor_stocks.map do |investor_stock|
+      processed_investor_stock_quarters = investor_stock.investor_stock_quarters.map do |investor_stock_quarter|
+        [investor_stock_quarter.designation, investor_stock_quarter.shares_count_at_the_end, investor_stock_quarter.stock_average_price]
+      end
+
+      [['Quarter', 'Q End Shares', 'Average price']] + processed_investor_stock_quarters
+    end
    end
     # Build all the current daily series price for all stocks of this investor
     # @stocks = @investor.stocks.map do |stock|
