@@ -1,16 +1,52 @@
-<div class="container">
+<%= link_to "https://www.bloomberg.com/markets" do %>
+<%= image_tag "market_indexes.png", class: "home-market-indexes-image" %>
+<% end %>
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <div class="home-checklist">
+        <!-- HERE'S WHERE THE GRAPH GOES -->
+        <h3>Rookie Checklist</h3>
+
+        <h6>Before you start investing, reduce your stress and get informed by reading the following checklist.</h6>
+
+        <p>1. Decide how much of your portfolio should revolve around stocks.</p>
+
+        <p>2. To invest or not to invest Index funds or individual stocks?</p>
+
+        <p>3. How many different kinds stocks should i buy?</p>
+
+        <p>4. Dividends or no dividends, which is better?</p>
+
+        <p>5. How much profit can i expect in my first year?</p>
+
+        <p>6. Buy what you know!</p>
+
+        <p>7. Watch out for warning signs!</p>
+
+        <p>8. Understand the volitility of your individual investments.</p>
+
+        <p>9. It’s a historical merry-go-round!</p>
+
+        <p>10. Avoid deadly traps!</p>
+
+        <%= link_to "Learn more!", pages_faq_path, class: "home-faq-link" %>
+
+      </div>
+    </div>
+    <div class="col-md-4">
       <%= render partial: "highlighted_article" %>
-      </div>
-       <div class="col-md-6">
+    </div>
+    <div class="col-md-4">
       <%= render partial: "news_list" %>
-      </div>
+    </div>
   </div>
 </div>
 
-<center>
+<!-- <center>
 <h2>COMING SOON:</h2>
 <h3>Market Index table/chart</h3>
 <h3>MeetUp event list?</h3>
 </center>
+-->

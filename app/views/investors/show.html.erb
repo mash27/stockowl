@@ -1,3 +1,6 @@
+<p><%= daily_price_serie = GetCurrentDailyPriceSeriesForStockService.new("MSFT").call %></p>
+<p><%= daily_price_serie[:daily_price_serie_data][:average] %></p>
+
 <h1>Investor portfolio</h1>
 
 <%= render partial: "investor" %>
