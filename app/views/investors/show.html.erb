@@ -1,6 +1,48 @@
-<h1>Investor portfolio</h1>
+<h3>Portfolio Profile</h3>
 
-<%= render partial: "investor" %>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-2">
+
+      <%= image_tag @investor.photo, class: "investor-photo" %>
+    </div>
+    <div class="col-xs-3">
+    <table class="profile-table">
+        <tbody>
+          <tr>
+            <td>
+              Manager:
+            </td>
+            <td>
+              <%= @investor.first_name %> <%= @investor.last_name %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Fund Name:
+            </td>
+            <td>
+             <%= @investor.fund_name %>
+           </td>
+         </tr>
+         <tr>
+          <td>
+            Portfolio Value:
+          </td>
+          <td>
+            <%= @investor.portfolio_value %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-xs-4">
+    <%= render "pie_chart", sectors_pie_chart_data: @sectors_pie_chart_data %>
+  </div>
+</div>
+</div>
+
 
 <table class="highlighter">
   <thead>
@@ -49,7 +91,7 @@
       <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
 
       <td>
-        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>">History</button>
+        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>" onclick="drawVisualizationForModal<%= investor_stock.stock.id %>()">History</button>
       </td>
     </tr>
     <% end %>
@@ -58,20 +100,20 @@
 
 <% @investor.investor_stocks.each do |investor_stock| %>
 <!-- Modal Structure -->
-  <div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-xs-8">
-          <h4>Stock history</h4>
-          <%= render partial: "stock_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
-        </div>
-        <div class="col-xs-4">
-
-        </div>
+<div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><%= investor_stock.stock.ticker %> ($<%= investor_stock.stock.current_price %>) - <%= @investor.first_name %> <%= @investor.last_name %> holding history</h4>
+        <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
+      </div>
+      <div class="col-xs-6">
+        <%= render partial: "combo_chart", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters, stock_id: investor_stock.stock.id } %>
       </div>
     </div>
-    <div class="modal-footer">
-      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
   </div>
+  <div class="modal-footer">
+    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
 <% end %>

@@ -109,6 +109,19 @@ stock_goog = Stock.create!({ ticker: "GOOG", company_name: "Alphabet Inc.", sect
 
 stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holding Limited", sector: "Services", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
+stock_fb = Stock.create!({ ticker: "FB", company_name: "Facebook Inc", sector: "Technology", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
+
+stock_mu = Stock.create!({ ticker: "MU", company_name: "Micron Technology Inc", sector: "Technology", current_price: 920, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+
+stock_etp = Stock.create!({ ticker: "ETP", company_name: "Energy Transfer Partners LP", sector: "Energy", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+
+stock_aapl = Stock.create!({ ticker: "AAPL", company_name: "Apple Inc", sector: "Technology", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
+
+stock_gm = Stock.create!({ ticker: "GM", company_name: "General Motors Co.", sector: "Consumer Cyclical", current_price: 920, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+
+stock_brk = Stock.create!({ ticker: "BRK.B", company_name: "Berkshire Hathaway Inc", sector: "Insurance", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+
+stock_lng = Stock.create!({ ticker: "LNG", company_name: "Cheniere Energy Inc", sector: "Energy", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
 puts "Creating investor stocks..."
 
@@ -117,6 +130,29 @@ stock_tepper_agn = InvestorStock.create!(investor: investor_tepper, stock: stock
 stock_tepper_goog = InvestorStock.create!(investor: investor_tepper, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
 stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_fb = InvestorStock.create!(investor: investor_tepper, stock: stock_fb, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_mu = InvestorStock.create!(investor: investor_tepper, stock: stock_mu, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_etp = InvestorStock.create!(investor: investor_tepper, stock: stock_etp, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_lng = InvestorStock.create!(investor: investor_tepper, stock: stock_lng, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_brk = InvestorStock.create!(investor: investor_tepper, stock: stock_brk, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_gm = InvestorStock.create!(investor: investor_tepper, stock: stock_gm, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_aapl = InvestorStock.create!(investor: investor_tepper, stock: stock_aapl, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+
+
+
+
+
+
+
+
 
 stock_buffett_agn = InvestorStock.create!(investor: investor_buffett, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
