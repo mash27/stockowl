@@ -2,38 +2,13 @@
 <%= image_tag "market_indexes.png", class: "home-market-indexes-image" %>
 <% end %>
 
+<div class="banner" style="background: url('<%= image_path "stockowl_home_bg.jpeg" %>');">
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
-      <div class="home-checklist">
-        <!-- HERE'S WHERE THE GRAPH GOES -->
-        <h3>Rookie Checklist</h3>
-
-        <h6>Before you start investing, reduce your stress and get informed by reading the following checklist.</h6>
-
-        <p>1. Decide how much of your portfolio should revolve around stocks.</p>
-
-        <p>2. To invest or not to invest Index funds or individual stocks?</p>
-
-        <p>3. How many different kinds stocks should i buy?</p>
-
-        <p>4. Dividends or no dividends, which is better?</p>
-
-        <p>5. How much profit can i expect in my first year?</p>
-
-        <p>6. Buy what you know!</p>
-
-        <p>7. Watch out for warning signs!</p>
-
-        <p>8. Understand the volitility of your individual investments.</p>
-
-        <p>9. It’s a historical merry-go-round!</p>
-
-        <p>10. Avoid deadly traps!</p>
-
-        <%= link_to "Learn more!", pages_faq_path, class: "home-faq-link" %>
-
-      </div>
+      <!-- HERE'S WHERE THE GRAPH GOES -->
+      <%= image_tag "warren_tips.jpg", class: "home-warren" %>
     </div>
     <div class="col-md-4">
       <%= render partial: "highlighted_article" %>
@@ -42,6 +17,7 @@
       <%= render partial: "news_list" %>
     </div>
   </div>
+</div>
 </div>
 
 <!-- <center>
