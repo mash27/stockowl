@@ -12,6 +12,7 @@ Investor.destroy_all
 Stock.destroy_all
 
 puts "Creating users..."
+
 user_ash = User.create!({ username: 'Ash', email: 'a.madi27@gmail.com',
   # photo: 'https://avatars0.githubusercontent.com/u/29701748?v=4',
   password: '123456'})
@@ -24,7 +25,9 @@ user_ruby = User.create!({ username: 'Ruby', email: 'rubyk70231@gmail.com',
   # photo: 'https://avatars3.githubusercontent.com/u/29701859?v=3',
   password: '123456'})
 
+
 puts "Creating investors..."
+
 investor_tepper = Investor.new({ first_name: 'David', last_name: 'Tepper', fund_name: 'Appaloosa LP', portfolio_value: '$6,087 Mil', last_update: "",
   # photo: ""
   })
@@ -97,75 +100,54 @@ investor_rolfe = Investor.new({ first_name: 'David', last_name: 'Rolfe', fund_na
 investor_rolfe.remote_photo_url = 'https://static.seekingalpha.com/uploads/2017/1/14/saupload_DavidRolfe_Wedgewood.jpg'
 investor_rolfe.save
 
+
 puts "Creating stocks..."
-stock_agn = Stock.create!({ ticker: "AGN", company_name: "Allergan plc", sector: "Healthcare", current_price: 232 })
 
-stock_goog = Stock.create!({ ticker: "GOOG", company_name: "Alphabet Inc.", sector: "Technology", current_price: 920 })
+stock_agn = Stock.create!({ ticker: "AGN", company_name: "Allergan plc", sector: "Healthcare", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
 
-stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holding Limited", sector: "Services", current_price: 155 })
+stock_goog = Stock.create!({ ticker: "GOOG", company_name: "Alphabet Inc.", sector: "Technology", current_price: 920, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+
+stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holding Limited", sector: "Services", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
 
 puts "Creating investor stocks..."
-stock_tepper_agn = InvestorStock.create!(investor: investor_tepper, stock: stock_agn)
 
-stock_tepper_goog = InvestorStock.create!(investor: investor_tepper, stock: stock_goog)
+stock_tepper_agn = InvestorStock.create!(investor: investor_tepper, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
-stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stock_baba)
+stock_tepper_goog = InvestorStock.create!(investor: investor_tepper, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
 
-puts "Creating stock histories..."
-StockHistory.create!(
+puts "Creating investor stock quarters..."
+
+4.times do |index|
+InvestorStockQuarter.create!(
   investor_stock: stock_tepper_agn,
-  market_cap: 78000,
-  shares: 1000,
-  value: 250000,
-  percentage_weight: 15,
-  percentage_share_change_from_last_q: 100,
-  percentage_trade_impact: "",
-  percentage_shares_outstanding: 0.75,
-  three_month_percentage_change: 1,
-  ytd_percentage_change: 12,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
+  designation: "2015Q#{index + 1}",
+  traded_shares_count: 1000,
+  shares_count_at_the_end: 1500,
+  percentage_change_in_owned_shares_from_last_quarter: 50,
+  stock_average_price: 215
   )
 
-StockHistory.create!(
+InvestorStockQuarter.create!(
   investor_stock: stock_tepper_goog,
-  market_cap: 78000,
-  shares: 1000,
-  value: 250000,
-  percentage_weight: 15,
-  percentage_share_change_from_last_q: 100,
-  percentage_trade_impact: "",
-  percentage_shares_outstanding: 0.75,
-  three_month_percentage_change: 1,
-  ytd_percentage_change: 12,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
+  designation: "2015Q#{index + 1}",
+  traded_shares_count: 1000,
+  shares_count_at_the_end: 1500,
+  percentage_change_in_owned_shares_from_last_quarter: 50,
+  stock_average_price: 215
   )
 
-StockHistory.create!(
+InvestorStockQuarter.create!(
   investor_stock: stock_tepper_baba,
-  market_cap: 78000,
-  shares: 1000,
-  value: 250000,
-  percentage_weight: 15,
-  percentage_share_change_from_last_q: 100,
-  percentage_trade_impact: "",
-  percentage_shares_outstanding: 0.75,
-  three_month_percentage_change: 1,
-  ytd_percentage_change: 12,
-  quarter: "2nd 2017",
-  shares_bought_sold: 500,
-  percentage_change: 100,
-  quarter_end_shares: 1000,
-  avg_price: 250,
+  designation: "2015Q#{index + 1}",
+  traded_shares_count: 1000,
+  shares_count_at_the_end: 1500,
+  percentage_change_in_owned_shares_from_last_quarter: 50,
+  stock_average_price: 215
   )
+end
 
 puts "Finished!"
