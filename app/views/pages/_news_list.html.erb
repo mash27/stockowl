@@ -1,5 +1,5 @@
-<div class="home-news-card">
-  <% @api_response.first["articles"].first(4).each do |article| %>
+<div class="home-news-list-card">
+  <% @api_response.first["articles"].first(5).each do |article| %>
   <div class="col-xs-12 col-sm-12">
     <div class="home-news-card-content">
       <%= link_to article["url"] do %>

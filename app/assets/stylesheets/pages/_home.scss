@@ -1,24 +1,92 @@
+.banner {
+  color: white;
+  background-size: cover !important;
+
+}
+
+.home-warren {
+  margin-top: 60px;
+  width: 100%;
+  // height: 100%;
+
+}
 // Specific CSS for your home-page
+
+.home-market-indexes-image {
+  width: 100vw;
+}
+
 .home-news-card {
   margin: 10px auto;
   background-color: white;
-  max-width: 400px;
-  font-size: 14px;
+  font-size: 11px;
+  margin-top: 60px;
+  box-shadow: 2px 2px 8px rgba(1,1,1,0.2);
+  border: 1px solid #d2d2d2;
+  .date {
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .de-emphasis {
+    color: gray;
+    font-size: 12px;
+  }
+  .main-text {
+    color: black;
+    line-height: 25px;
+  }
+  a {
+    text-decoration: none;
+  }
   h4{
+    font-size: 20px;
     border-top: 0;
-    }
+    color: #484545;
+  }
   p{
     font-size: 14px;
     margin-top: 0px;
-    }
+  }
+  .content {
+    padding: 0px 20px 10px 20px;
+  }
+  position: relative;
+}
+
+.home-news-list-card {
+  margin: 60px auto;
+  background-color: white;
+  font-size: 11px;
+  h4{
+    font-size: 20px;
+    border-top: 0;
+  }
+  p{
+    font-size: 14px;
+    margin-top: 0px;
+  }
   position: relative;
 }
 
 .home-news-card-content{
-  font-size: 14px;
+  font-size: 12px;
   padding: 10px;
   background-color: white;
-
+  border-bottom: 1px solid #e2e2e2;
+  h5{
+    font-size: 18px;
+    text-decoration: none;
+    color: #6f6f6f;
+  }
+  a {
+    text-decoration: none;
+  }
+  .home-news-main-site {
+    a {
+      text-decoration: none;
+      color: #b9b9b9;
+    }
+  }
 }
 
 .home-news-main-site {

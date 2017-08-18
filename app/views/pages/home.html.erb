@@ -1,16 +1,28 @@
-<div class="container">
+<%= link_to "https://www.bloomberg.com/markets" do %>
+<%= image_tag "market_indexes.png", class: "home-market-indexes-image" %>
+<% end %>
+
+<div class="banner" style="background: url('<%= image_path "stockowl_home_bg.jpeg" %>');">
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <!-- HERE'S WHERE THE GRAPH GOES -->
+      <%= image_tag "warren_tips.jpg", class: "home-warren" %>
+    </div>
+    <div class="col-md-4">
       <%= render partial: "highlighted_article" %>
-      </div>
-       <div class="col-md-6">
+    </div>
+    <div class="col-md-4">
       <%= render partial: "news_list" %>
-      </div>
+    </div>
   </div>
 </div>
+</div>
 
-<center>
+<!-- <center>
 <h2>COMING SOON:</h2>
 <h3>Market Index table/chart</h3>
 <h3>MeetUp event list?</h3>
 </center>
+-->
