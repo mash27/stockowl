@@ -33,7 +33,7 @@ $(document).ready(function(){
       $('ul.stocks').html('')
     $(this).find('li').each(function(index, item){
       console.log($(item).text())
-      $('ul.stocks').append('<li> <em>Stock:</em>' + $(item).text() + '</li>')
+      $('ul.stocks').append('<li>' + $(item).text() + '</li>')
     })
 
   })

@@ -5,21 +5,31 @@
         <div class="preview-box">
           <div id="preview" class="investor-card-highlighted">
 
+
             <div class="content">
-            <%= image_tag @investors.first.photo %>
+              <%= image_tag @investors.first.photo %>
+
               <a class="card-link" href="#" ></a>
               <h3 class="i-name"><%= @investors.first.first_name %> <%= @investors.first.last_name %></h3>
               <p class="f-name"><%= @investors.first.fund_name %></p>
               <p class="p-value"><%= @investors.first.portfolio_value %></p>
               <div class="view-btn-container">
-                <%= link_to "View", investor_path(@investors.first), class: "view-btn"%>
+                <%= link_to "View More", investor_path(@investors.first), class: "view-btn"%>
               </div>
             </div>
-          <ul class="stocks"></ul>
+              <div class="right">
+                <div class="preview-title" id="top-5">
+                  <div class="w3-content" style="max-width:700px">
+                    <h5><span class="w3-tag title">TOP HOLDINGS</span></h5>
+                  </div>
+                </div>
+                <ul class="stocks"></ul>
+              </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-6" style="background-image: url('https://images.pexels.com/photos/373965/pexels-photo-373965.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
+      <div class="wrapper">
         <% @investors.each do |investor| %>
         <div class="col-xs-12">
           <div class="investor-card-description">
@@ -31,7 +41,7 @@
               <p class="f-name"><%= investor.fund_name %></p>
               <p class="p-value"><%= investor.portfolio_value %></p>
               <div class="view-btn-container">
-                <%= link_to "View", investor_path(investor), class: "view-btn"%>
+                <%= link_to "View More", investor_path(investor), class: "view-btn"%>
               </div>
             </div>
             <div class="content-for-preview hidden">
@@ -46,6 +56,7 @@
           </div>
         </div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
