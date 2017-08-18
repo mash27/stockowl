@@ -6,6 +6,17 @@ class InvestorsController < ApplicationController
   def show
     @investor = Investor.find(params[:id])
 
+    @sectors_pie_chart_data = @investor.investor_stocks.reduce({}) do |histogram, investor_stock|
+      sector = investor_stock.stock.sector
+      if histogram.key?(sector)
+       histogram[sector] += 1
+      else
+        histogram[sector] = 1
+      end
+      histogram
+    end
+    .to_a
+   end
     # Build all the current daily series price for all stocks of this investor
     # @stocks = @investor.stocks.map do |stock|
     #   daily_price_serie = GetCurrentDailyPriceSeriesForStockService.new(stock.ticker).call
@@ -14,5 +25,4 @@ class InvestorsController < ApplicationController
     #   stock.daily_price_serie = daily_price_serie
     #   stock
     # end
-  end
 end
