@@ -118,6 +118,71 @@ stock_tepper_goog = InvestorStock.create!(investor: investor_tepper, stock: stoc
 
 stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
+stock_buffett_agn = InvestorStock.create!(investor: investor_buffett, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_buffett_goog = InvestorStock.create!(investor: investor_buffett, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_buffett_baba = InvestorStock.create!(investor: investor_buffett, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_gates_agn = InvestorStock.create!(investor: investor_gates, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_gates_goog = InvestorStock.create!(investor: investor_gates, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_gates_baba = InvestorStock.create!(investor: investor_gates, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_klarman_agn = InvestorStock.create!(investor: investor_klarman, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_klarman_goog = InvestorStock.create!(investor: investor_klarman, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_klarman_baba = InvestorStock.create!(investor: investor_klarman, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_einhorn_agn = InvestorStock.create!(investor: investor_einhorn, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_einhorn_goog = InvestorStock.create!(investor: investor_einhorn, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_einhorn_baba = InvestorStock.create!(investor: investor_einhorn, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_loeb_agn = InvestorStock.create!(investor: investor_loeb, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_loeb_goog = InvestorStock.create!(investor: investor_loeb, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_loeb_baba = InvestorStock.create!(investor: investor_loeb, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_greenberg_agn = InvestorStock.create!(investor: investor_greenberg, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_greenberg_goog = InvestorStock.create!(investor: investor_greenberg, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_greenberg_baba = InvestorStock.create!(investor: investor_greenberg, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_icahn_agn = InvestorStock.create!(investor: investor_icahn, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_icahn_goog = InvestorStock.create!(investor: investor_icahn, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_icahn_baba = InvestorStock.create!(investor: investor_icahn, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_rolfe_agn = InvestorStock.create!(investor: investor_rolfe, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_rolfe_goog = InvestorStock.create!(investor: investor_rolfe, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_rolfe_baba = InvestorStock.create!(investor: investor_rolfe, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_ackman_agn = InvestorStock.create!(investor: investor_ackman, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_ackman_goog = InvestorStock.create!(investor: investor_ackman, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_ackman_baba = InvestorStock.create!(investor: investor_ackman, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pabrai_agn = InvestorStock.create!(investor: investor_pabrai, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pabrai_goog = InvestorStock.create!(investor: investor_pabrai, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pabrai_baba = InvestorStock.create!(investor: investor_pabrai, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pickens_agn = InvestorStock.create!(investor: investor_pickens, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pickens_goog = InvestorStock.create!(investor: investor_pickens, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+
+stock_pickens_baba = InvestorStock.create!(investor: investor_pickens, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
 puts "Creating investor stock quarters..."
 
