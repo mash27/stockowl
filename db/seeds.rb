@@ -58,7 +58,7 @@ investor_gates.save
 investor_pickens = Investor.new({ first_name: 'T Boone', last_name: 'Pickens', fund_name: 'BP Capital Fund Advisors, LLC', portfolio_value: '$209 Mil', last_update: "",
   # photo: ""
   })
-investor_pickens.remote_photo_url = 'http://abcnews.go.com/images/US/gty_t_boone_pickens_lpl_130130_mn.jpg'
+investor_pickens.remote_photo_url = 'http://energyfuse.org/wp-content/uploads/2015/05/t-boone.jpg'
 investor_pickens.save
 
 investor_greenberg = Investor.new({ first_name: 'Glenn', last_name: 'Greenberg', fund_name: 'Brave Warrior Advisors, LLC', portfolio_value: '$2,263 Mil', last_update: "",
@@ -70,7 +70,7 @@ investor_greenberg.save
 investor_pabrai = Investor.new({ first_name: 'Mohnish', last_name: 'Pabrai', fund_name: 'Dalal Street, LLC', portfolio_value: '$405 Mil', last_update: "",
   # photo: ""
   })
-investor_pabrai.remote_photo_url = 'http://img.timeinc.net/time/daily/2012/1201/360_mohnish_pabrai_0110.jpg'
+investor_pabrai.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/0af/040/0636092.jpg'
 investor_pabrai.save
 
 investor_einhorn = Investor.new({ first_name: 'David', last_name: 'Einhorn', fund_name: 'Greenlight Capital', portfolio_value: '$7,195 Mil', last_update: "",
@@ -88,13 +88,13 @@ investor_loeb.save
 investor_ackman = Investor.new({ first_name: 'Bill', last_name: 'Ackman', fund_name: 'Pershing Square Capital Management, L.P.', portfolio_value: '$6,015 Mil', last_update: "",
   # avatar: ""
   })
-investor_ackman.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Billackmansletterabouttheanalystwholefthisfundisincrediblyclassy.jpg'
+investor_ackman.remote_photo_url = 'https://www.streetinsider.com/images/entities/37/resize_ackman.jpg'
 investor_ackman.save
 
 investor_rolfe = Investor.new({ first_name: 'David', last_name: 'Rolfe', fund_name: 'Wedgewood Partners, Inc.', portfolio_value: '$3,265 Mil', last_update: "",
   # avatar: ""
   })
-investor_rolfe.remote_photo_url = 'https://static.seekingalpha.com/uploads/2017/1/14/saupload_DavidRolfe_Wedgewood.jpg'
+investor_rolfe.remote_photo_url = 'http://www.beyondproxy.com/wp-content/uploads/2013/06/David-Rolfe1.png'
 investor_rolfe.save
 
 puts "Creating stocks..."
