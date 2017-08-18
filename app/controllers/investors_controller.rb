@@ -14,8 +14,8 @@ class InvestorsController < ApplicationController
         histogram[sector] = 1
       end
       histogram
-    # end
-    # .to_a
+    end
+    .to_a
 
     @quarters_combo_chart_data = investor_stocks.map do |investor_stock|
       processed_investor_stock_quarters = investor_stock.investor_stock_quarters.map do |investor_stock_quarter|
@@ -24,7 +24,7 @@ class InvestorsController < ApplicationController
 
       [['Quarter', 'Q End Shares', 'Average price']] + processed_investor_stock_quarters
     end
-   end
+   # end
     # Build all the current daily series price for all stocks of this investor
 
     @stocks = @investor.stocks.map do |stock|
