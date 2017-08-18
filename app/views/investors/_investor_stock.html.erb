@@ -1,0 +1,39 @@
+<td>
+  <%= investor_stock.stock.ticker %>
+</td>
+<td>
+  <%= investor_stock.stock.company_name %>
+</td>
+<td>
+  <%= investor_stock.stock.sector %>
+</td>
+<td>
+  <%= investor_stock.stock.current_price %>
+</td>
+<td>
+    <%= investor_stock.stock.market_cap_in_millions %>
+</td>
+<td>
+    <%= investor_stock.shares_total_count %>
+</td>
+<td>
+    <%= investor_stock.latest_quarter_shares_total_value %>
+</td>
+<td>
+    <%= investor_stock.percentage_weight_compared_to_portfolio_total_value %>
+</td>
+<td>
+    50
+    <!-- TODO when at least one qurter will be present on an investor_stock: percentage_change_in_owned_shares_from_last_quarter -->
+</td>
+<td>
+    <%= investor_stock.percentage_shares_outstanding %>
+</td>
+<td>
+    <%= investor_stock.stock.percentage_three_last_months_price_change %>
+</td>
+<td>
+    <%= investor_stock.stock.percentage_year_to_date_price_change %>
+</td>
+
+

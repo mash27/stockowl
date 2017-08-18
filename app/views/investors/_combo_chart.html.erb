@@ -1,0 +1,29 @@
+
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    // google.charts.setOnLoadCallback(drawVisualizationForModal<%= stock_id %>);
+
+    function drawVisualizationForModal<%= stock_id %>() {
+      // Some raw data (not necessarily accurate)
+      var data = google.visualization.arrayToDataTable(<%= raw quarters_combo_chart_data.to_json %>);
+
+  var options = {
+    // title : 'Monthly Coffee Production by Country',
+    // series: {2: {targetAxisIndex:1}},
+    // vAxes: {1: {title:'Losses',textStyle: {color: 'red'}}},
+
+    vAxis: {title: 'Quarter end shares'},
+    hAxis: {title: ''},
+    chartArea: {width:'60%',height:'80%'},
+    height: 350,
+    width: 700,
+    seriesType: 'bars',
+    series: {1: {type: 'line'}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div<%= stock_id %>'));
+  chart.draw(data, options);
+}
+  </script>
+
+  <div id="chart_div<%= stock_id %>" style="width: 1200px; height: 350px;"></div>

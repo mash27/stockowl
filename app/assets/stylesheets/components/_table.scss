@@ -1,5 +1,10 @@
-th, td {
-  padding: 10px;
+.investor-photo {
+  height: 150px;
+  border-radius: 5px;
+}
+
+.profile-table th, td {
+  text-align: left;
 }
 
 table.highlighter {
@@ -10,9 +15,15 @@ table.highlighter {
       background-color: #dbe3ff;
     }
   }
-  .hidden-table {
-    strong {
-      color: blue;
-    }
-  }
+th, td {
+  padding: 10px;
+  text-align: center;
 }
+  // .hidden-table {
+  //   strong {
+  //     color: blue;
+  //   }
+  // }
+}
+
+
