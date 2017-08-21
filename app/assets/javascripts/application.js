@@ -11,4 +11,5 @@ $(document).ready(function(){
   $('.modal').modal();
 });
 
+
 $(".alert" ).fadeOut(3000);

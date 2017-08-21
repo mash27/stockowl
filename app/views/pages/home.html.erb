@@ -2,21 +2,65 @@
 <%= image_tag "market_indexes.png", class: "home-market-indexes-image" %>
 <% end %>
 
-<div class="banner">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- HERE'S WHERE THE GRAPH GOES -->
+      <div class="home-investor-card">
+        <div class="home-investor-card-content">
+        <div class="home-investor-image" style="background-image: url('<%= image_path 'stockowl_home_investor_tepper.jpg' %>');"></div>
+
+          <div><h4>Investing Master: David Tepper</h4></div>
+
+          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> U.S.A.</h5></div>
+
+          <div><h5>Net Worth: <i class="fa fa-dollar" aria-hidden="true"></i> 9.94 Billion</h5></div>
+
+          <div><h5>Description: David Tepper is one of the most well known value investors in America. Tepper's proven track record of an estimated 30% annual returns per year for his fund, Appaloosa, has made him one of the  leading strategiest in the industry (rivaling the popularity of the notorious Warren Buffet). At StockOwl, we choose investors, like Tepper, to emulate his investment strategies. Click the button below and browse our list of investors and their portfolio details.  </h5></div>
+
+          <div class="home-btn-container">
+            <%= link_to "see more Masters", investors_path, class: "btn btn-primary"%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <!-- HERE'S WHERE THE GRAPH GOES -->
-      <%= image_tag "warren_tips.jpg", class: "home-warren" %>
-    </div>
-    <div class="col-md-4">
-      <%= render partial: "highlighted_article" %>
-    </div>
-    <div class="col-md-4">
-      <%= render partial: "news_list" %>
+      <div class="home-events-card">
+        <div class="home-events-card-content">
+        <div class="home-events-image" style="background-image: url('<%= image_path 'stockowl_brickwall.jpeg' %>');"></div>
+
+          <div><h4>Investing Master: David Tepper</h4></div>
+
+          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> U.S.A.</h5></div>
+
+          <div><h5>Net Worth: <i class="fa fa-dollar" aria-hidden="true"></i> 9.94 Billion</h5></div>
+
+          <div><h5>Description: David Tepper is one of the most well known value investors in America. Tepper's proven track record of an estimated 30% annual returns per year for his fund, Appaloosa, has made him one of the  leading strategiest in the industry (rivaling the popularity of the notorious Warren Buffet).  </h5></div>
+
+          <div class="home-btn-container">
+            <%= link_to "see more Masters", investors_path, class: "btn btn-primary"%></div>
+          </div>
+        </div>
     </div>
   </div>
+</div>
+
+
+
+
+
+  <div class="col-md-4">
+    <%= render partial: "highlighted_article" %>
+  </div>
+  <div class="col-md-4">
+    <%= render partial: "news_list" %>
+  </div>
+</div>
 </div>
 </div>
 
