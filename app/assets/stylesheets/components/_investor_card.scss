@@ -17,20 +17,39 @@
   }
 }
 
+.description {
+      font-size: 16px;
+    line-height: 30px;
+}
+
+.card-image {
+  height: 191px;
+  width: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.top-items {
+      width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
 #preview {
-  padding: 50px 0;
   display: flex;
   justify-content: space-between;
-  padding-top: 75px;
   flex-direction: row;
   align-items: flex-start;
+  width: 500px;
+  flex-direction: column;
+  height: 500px;
   img {
     height: 191px;
   }
   ul {
     li {
       font-size: 16px;
-      line-height: 39px;
+      line-height: 25px;
       text-align: left;
       font-variant: petite-caps;
     }
@@ -43,7 +62,6 @@
 .investor-card-highlighted {
   height: 100vh;
   position: fixed;
-  top: 70px;
   width: 500px;
 }
 
@@ -70,6 +88,7 @@
   img {
     margin: 0;
     height: 191px;
+    width: 200px;
   }
   .content {
     flex: 0 0 50%;
@@ -149,7 +168,7 @@
 // }
 .i-name {
   font-size: 28px;
-  color: rgba(51, 51, 51, 0.95);
+  color: rgba(37, 36, 36, 0.95)
 }
 .w3-tag.title {
   background-color: #0D5276 !important;
