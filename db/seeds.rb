@@ -28,76 +28,148 @@ user_ruby = User.create!({ username: 'Ruby', email: 'rubyk70231@gmail.com',
 
 puts "Creating investors..."
 
-investor_tepper = Investor.new({ first_name: 'David', last_name: 'Tepper', fund_name: 'Appaloosa LP', portfolio_value: '$6,087 Mil', last_update: "",
+investor_tepper = Investor.new({
+  first_name: 'David',
+  last_name: 'Tepper',
+  fund_name: 'Appaloosa LP',
+  portfolio_value: '$6,087 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("David Tepper")
   # photo: ""
   })
 investor_tepper.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/David_Tepper_01.jpg/220px-David_Tepper_01.jpg'
 investor_tepper.save
 
-investor_buffett = Investor.new({ first_name: 'Warren', last_name: 'Buffet', fund_name: 'Berkshire Hathaway', portfolio_value: '$161,874 Mil', last_update: "",
+investor_buffett = Investor.new({
+  first_name: 'Warren',
+  last_name: 'Buffet',
+  fund_name: 'Berkshire Hathaway',
+  portfolio_value: '$161,874 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Warren Buffet")
   # photo: ""
   })
 investor_buffett.remote_photo_url = 'https://pbs.twimg.com/profile_images/3599636117/8468a03db84ec4211c3efeba18ac3925_400x400.png'
 investor_buffett.save
 
-investor_klarman = Investor.new({ first_name: 'Seth', last_name: 'Klarman', fund_name: 'The Baupost Group', portfolio_value: '$8,697 Mil', last_update: "",
+investor_klarman = Investor.new({
+  first_name: 'Seth',
+  last_name: 'Klarman',
+  fund_name: 'The Baupost Group',
+  portfolio_value: '$8,697 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Seth Klarman")
   # photo: ""
   })
 investor_klarman.remote_photo_url = 'http://investing.ibkram.com/content/2013/04/sethklarman2.jpg'
 investor_klarman.save
 
-investor_icahn = Investor.new({ first_name: 'Carl', last_name: 'Icahn', fund_name: 'Icahn Capital Management LP', portfolio_value: '$19,937 Mil', last_update: "",
+investor_icahn = Investor.new({
+  first_name: 'Carl',
+  last_name: 'Icahn',
+  fund_name: 'Icahn Capital Management LP',
+  portfolio_value: '$19,937 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Carl Icahn")
   # photo: ""
   })
 investor_icahn.remote_photo_url = 'https://specials-images.forbesimg.com/imageserve/57e5739ca7ea430a8a1a2b8f/416x416.jpg?background=000000&cropX1=113&cropX2=730&cropY1=63&cropY2=680'
 investor_icahn.save
 
-investor_gates = Investor.new({ first_name: 'Bill', last_name: 'Gates', fund_name: 'Bill & Melinda Gates Foundation Trust', portfolio_value: '$161,874 Mil', last_update: "",
+investor_gates = Investor.new({
+  first_name: 'Bill',
+  last_name: 'Gates',
+  fund_name: 'Bill & Melinda Gates Foundation Trust',
+  portfolio_value: '$161,874 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("David Tepper")
   # photo: ""
   })
 investor_gates.remote_photo_url = 'https://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg'
 investor_gates.save
 
-investor_pickens = Investor.new({ first_name: 'T Boone', last_name: 'Pickens', fund_name: 'BP Capital Fund Advisors, LLC', portfolio_value: '$209 Mil', last_update: "",
+investor_pickens = Investor.new({
+  first_name: 'T Boone',
+  last_name: 'Pickens',
+  fund_name: 'BP Capital Fund Advisors, LLC',
+  portfolio_value: '$209 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("T Boone Pickens")
   # photo: ""
   })
-investor_pickens.remote_photo_url = 'http://energyfuse.org/wp-content/uploads/2015/05/t-boone.jpg'
+investor_pickens.remote_photo_url = 'https://cdn-images-1.medium.com/fit/c/200/200/0*CaxWC1yHi4sLoWzv.jpeg'
 investor_pickens.save
 
-investor_greenberg = Investor.new({ first_name: 'Glenn', last_name: 'Greenberg', fund_name: 'Brave Warrior Advisors, LLC', portfolio_value: '$2,263 Mil', last_update: "",
+investor_greenberg = Investor.new({
+  first_name: 'Glenn',
+  last_name: 'Greenberg',
+  fund_name: 'Brave Warrior Advisors, LLC',
+  portfolio_value: '$2,263 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Glenn Greenberg")
   # photo: ""
   })
 investor_greenberg.remote_photo_url = 'https://az712682.vo.msecnd.net/expert-pictures/140310_IGFCDJBAG_tsqr.jpg'
 investor_greenberg.save
 
-investor_pabrai = Investor.new({ first_name: 'Mohnish', last_name: 'Pabrai', fund_name: 'Dalal Street, LLC', portfolio_value: '$405 Mil', last_update: "",
+investor_pabrai = Investor.new({
+  first_name: 'Mohnish',
+  last_name: 'Pabrai',
+  fund_name: 'Dalal Street, LLC',
+  portfolio_value: '$405 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Mohnish Pabrai")
   # photo: ""
   })
 investor_pabrai.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/0af/040/0636092.jpg'
 investor_pabrai.save
 
-investor_einhorn = Investor.new({ first_name: 'David', last_name: 'Einhorn', fund_name: 'Greenlight Capital', portfolio_value: '$7,195 Mil', last_update: "",
+investor_einhorn = Investor.new({
+  first_name: 'David',
+  last_name: 'Einhorn',
+  fund_name: 'Greenlight Capital',
+  portfolio_value: '$7,195 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("David Einhorn")
   # photo: ""
   })
 investor_einhorn.remote_photo_url = 'https://iialpha.euromoneycdn.com/images/1077/David%20Einhorn%20AC%20story%20page.jpg'
 investor_einhorn.save
 
-investor_loeb = Investor.new({ first_name: 'Dan', last_name: 'Loeb', fund_name: 'Third Point, LLC', portfolio_value: '$11,282 Mil', last_update: "",
+investor_loeb = Investor.new({
+  first_name: 'Dan',
+  last_name: 'Loeb',
+  fund_name: 'Third Point, LLC',
+  portfolio_value: '$11,282 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Dan Loeb")
   # photo: ""
   })
 investor_loeb.remote_photo_url = 'http://www.thirdpoint.com/wp-content/uploads/2015/06/DanielLoeb_thumb-e1433271433273.jpg'
 investor_loeb.save
 
-investor_ackman = Investor.new({ first_name: 'Bill', last_name: 'Ackman', fund_name: 'Pershing Square Capital Management, L.P.', portfolio_value: '$6,015 Mil', last_update: "",
+investor_ackman = Investor.new({
+  first_name: 'Bill',
+  last_name: 'Ackman',
+  fund_name: 'Pershing Square Capital Management, L.P.',
+  portfolio_value: '$6,015 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("Bill Ackman")
   # avatar: ""
   })
 investor_ackman.remote_photo_url = 'https://www.streetinsider.com/images/entities/37/resize_ackman.jpg'
 investor_ackman.save
 
-investor_rolfe = Investor.new({ first_name: 'David', last_name: 'Rolfe', fund_name: 'Wedgewood Partners, Inc.', portfolio_value: '$3,265 Mil', last_update: "",
+investor_rolfe = Investor.new({
+  first_name: 'David',
+  last_name: 'Rolfe',
+  fund_name: 'Wedgewood Partners, Inc.',
+  portfolio_value: '$3,265 Mil',
+  last_update: "",
+  description: GetDescriptionService.new().searcher("David Rolfe")
   # avatar: ""
   })
-investor_rolfe.remote_photo_url = 'http://www.beyondproxy.com/wp-content/uploads/2013/06/David-Rolfe1.png'
+investor_rolfe.remote_photo_url = 'https://gurufocus.s3.amazonaws.com/conference/Daivd_Rolfe_samesize.png?3'
 investor_rolfe.save
 
 
