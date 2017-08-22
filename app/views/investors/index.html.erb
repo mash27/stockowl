@@ -1,69 +1,13 @@
  <div class="investors-container">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-6" style="float: right;">
-        <div class="preview-box hidden">
-          <div id="preview" class="investor-card-highlighted">
-
-<div class="top-items">
-            <div class="content">
-        <div class="card-image" data-image="<%= image_path @investors.first.photo %>" style="background-image:url('');"></div>
-              <a class="card-link" href="#" ></a>
-              <h3 class="i-name"></h3>
-              <p class="f-name"></p>
-              <p class="p-value"></p>
-              <div class="view-btn-container">
-                <%= link_to "View More", "#", class: "view-btn"%>
-              </div>
-            </div>
-              <div class="right">
-                <div class="preview-title" id="top-5">
-                  <div class="w3-content" style="max-width:700px">
-                    <h5><span class="w3-tag title">TOP HOLDINGS</span></h5>
-                  </div>
-                </div>
-                <ul class="stocks"></ul>
-              </div>
-              </div>
-              <p class="description">
-
-              </p>
-          </div>
-        </div>
+      <div class="col-xs-6 bg-img-investors" style="background-image: linear-gradient(-1deg, rgba(199, 199, 199, 0.15) 0%, rgba(213, 222, 226, 0.57) 154%), url(/assets/pexels-20cf056….jpg), url('<%= image_path "pexels.jpg" %>');">
+      <!-- THIS IS THE OVERVIEW ON THE LEFT -->
+        <%= render partial: "investors_overview" %>
       </div>
-      <div class="col-xs-6 bg-img-investors" style="background-image: url('https://images.pexels.com/photos/373965/pexels-photo-373965.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
-      <div class="wrapper">
-        <% @investors.each do |investor| %>
-
-        <div class="col-xs-12">
-          <div class="investor-card-description">
-          <div class="card-image" data-image="<%= image_path investor.photo %>" style="background-image:url('<%= image_path investor.photo %>');"></div>
-            <div class="content">
-              <a class="card-link" href="#" ></a>
-              <h3 class="i-name"><%= investor.first_name %> <%= investor.last_name %></h3>
-              <p class="f-name"><%= investor.fund_name %></p>
-              <p class="p-value"><%= investor.portfolio_value %></p>
-              <div class="view-btn-container">
-              <%= link_to "Preview", "#", class: "btn-preview view-btn"%>
-                <%= link_to "View More", investor_path(investor), class: "view-btn"%>
-              </div>
-            </div>
-            <div class="content-for-preview hidden">
-            <div class="description">
-              <%= investor.description.split(" ").first(30).join(" ") %>...
-            </div>
-              <ul>
-                <% investor.stocks.each do |stock| %>
-                <li>
-                  <%= stock.company_name %>
-                </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <% end %>
-        </div>
+      <div class="col-xs-6">
+      <!-- THIS IS THE HIGHLIGHT ON THE RIGHT -->
+        <%= render partial: "investor_highlight" %>
       </div>
     </div>
   </div>
