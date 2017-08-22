@@ -2,7 +2,6 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require_tree .
-//= colorize_numbers
 //= investor_card
 
 
