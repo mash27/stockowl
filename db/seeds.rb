@@ -401,6 +401,15 @@ stock_greenberg_ADS = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_ADS.fdiv(stock_ADS.shares_outstanding * 1000000) * 100
   )
 
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_ADS,
+    designation: "2017Q3",
+    traded_shares_count: 938698,
+    shares_count_at_the_end: 938698,
+    percentage_change_in_owned_shares_from_last_quarter: ,
+    stock_average_price: 215
+    )
+
 shares_total_count_AR = 11459921
 stock_greenberg_AR = InvestorStock.create!(
   investor: investor_greenberg,
@@ -655,6 +664,9 @@ stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stoc
 # stock_pickens_baba = InvestorStock.create!(investor: investor_pickens, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
 puts "Creating investor stock quarters..."
+
+
+
 
 4.times do |index|
   InvestorStockQuarter.create!(

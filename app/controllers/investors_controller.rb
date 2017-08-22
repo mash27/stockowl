@@ -24,6 +24,17 @@ class InvestorsController < ApplicationController
 
       [['Quarter', 'Q End Shares', 'Average price']] + processed_investor_stock_quarters
     end
+
+
+    @investor_stocks = @investor.investor_stocks
+
+    # SORTING our stocks
+    case params[:sort]
+    when 'weight-desc'
+      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :desc)
+    when 'weight-asc'
+      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :asc)
+    end
    # end
     # Build all the current daily series price for all stocks of this investor
 
