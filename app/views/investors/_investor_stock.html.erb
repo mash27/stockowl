@@ -15,11 +15,11 @@
 </td>
 <td>
     <%=
-    Stock.transform_number(investor_stock.shares_total_count)
+    number_with_delimiter(investor_stock.shares_total_count)
    %>
 </td>
 <td>
-    <%= Stock.transform_number(investor_stock.latest_quarter_shares_total_value) %>
+    <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
 <td>
     <%= investor_stock.percentage_weight_compared_to_portfolio_total_value.round(2) %>%
