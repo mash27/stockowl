@@ -14,15 +14,15 @@ Stock.destroy_all
 puts "Creating users..."
 
 user_ash = User.create!({ username: 'Ash', email: 'a.madi27@gmail.com',
-  # photo: 'https://avatars0.githubusercontent.com/u/29701748?v=4',
+  photo: 'https://avatars0.githubusercontent.com/u/29701748?v=4',
   password: '123456'})
 
 user_sandi = User.create!({ username: 'Sandi', email: 'shopelite510@gmail.com',
-  # photo: "https://avatars0.githubusercontent.com/u/26726874?v=3",
+  photo: "https://avatars0.githubusercontent.com/u/26726874?v=3",
   password: '123456'})
 
 user_ruby = User.create!({ username: 'Ruby', email: 'rubyk70231@gmail.com',
-  # photo: 'https://avatars3.githubusercontent.com/u/29701859?v=3',
+  photo: 'https://avatars3.githubusercontent.com/u/29701859?v=3',
   password: '123456'})
 
 
