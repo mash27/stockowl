@@ -8,7 +8,7 @@
       <%= image_tag @investor.photo, class: "investor-photo" %>
     </div>
     <div class="col-xs-3">
-    <table class="profile-table">
+      <table class="profile-table">
         <tbody>
           <tr>
             <td>
@@ -47,57 +47,71 @@
 <table class="highlighter">
   <thead>
     <tr>
-      <th>
+      <th class="text-left">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'ticker-asc' ? 'ticker-desc' : 'ticker-asc')) do %>
         Ticker
-      </th>
-      <th>
-        Company
-      </th>
-      <th>
-        Sector
-      </th>
-      <th>
-        Current Price
-      </th>
-      <th>
-        Market Cap ($ Mil)
-      </th>
-      <th>
-        Shares
-      </th>
-      <th>
-        Value ($1000)
-      </th>
-      <th>
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')) do %>
-          % Weight
         <% end %>
       </th>
-      <th>
-        % Share Change from last Q
+      <th class="text-left">
+        Company
       </th>
-      <th>
+      <th class="text-left">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sector-asc' ? 'sector-desc' : 'sector-asc')) do %>
+        Sector
+        <% end %>
+      </th>
+      <th class="text-right">
+        Current Price
+      </th>
+      <th class="text-right">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'mcap-desc' ? 'mcap-asc' : 'mcap-desc')) do %>
+        Market Cap  (in $ Mil)
+        <% end %>
+      </th>
+      <th class="text-right">
+        Shares
+      </th>
+      <th class="text-right">
+        Value ($1000)
+      </th>
+      <th class="text-right">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')) do %>
+        % Weight
+        <% end %>
+      </th>
+      <th class="text-right">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')) do %>
+          % Share Change from last Q
+        <% end %>
+      </th>
+      <th class="text-right">
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sharesout-desc' ? 'sharesout-asc' : 'sharesout-desc')) do %>
         % Shares Outstanding
+        <% end %>
       </th>
-      <th>
-        3M % Change
-      </th>
-      <th>
-        YTD % Change
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @investor_stocks.each do |investor_stock| %>
-    <tr>
-      <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
+      <th class="text-right">
+       <%= link_to investor_path(@investor, sort: (params[:sort] == '3mchange-desc' ? '3mchange-asc' : '3mchange-desc')) do %>
+       3M % Change
+       <% end %>
+     </th>
+     <th class="text-right">
+       <%= link_to investor_path(@investor, sort: (params[:sort] == 'ytdchange-desc' ? 'ytdchange-asc' : 'ytdchange-desc')) do %>
+       YTD % Change
+       <% end %>
+     </th>
+   </tr>
+ </thead>
+ <tbody>
+  <% @investor_stocks.each do |investor_stock| %>
+  <tr>
+    <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
 
-      <td>
-        <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>" onclick="drawVisualizationForModal<%= investor_stock.stock.id %>()">History</button>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
+    <td>
+      <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>" onclick="drawVisualizationForModal<%= investor_stock.stock.id %>()">History</button>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
 </table>
 
 <% @investor.investor_stocks.each_with_index do |investor_stock, index| %>
@@ -114,8 +128,8 @@
       </div>
     </div>
   </div>
-  <div class="modal-footer">
+  <!-- <div class="modal-footer">
     <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
+  </div> -->
 </div>
 <% end %>

@@ -1,41 +1,48 @@
-<td>
+<td class="text-left">
   <%= investor_stock.stock.ticker %>
 </td>
-<td>
+<td class="text-left">
   <%= investor_stock.stock.company_name %>
 </td>
-<td>
+<td class="text-left">
   <%= investor_stock.stock.sector %>
 </td>
-<td>
-  <%= investor_stock.stock.current_price %>
+<td class="text-right">
+  <%= number_with_precision(investor_stock.stock.current_price, precision: 2) %>
 </td>
-<td>
-    <%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
+<td class="text-right">
+  <%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
 </td>
-<td>
-    <%=
-    number_with_delimiter(investor_stock.shares_total_count)
-   %>
+<td class="text-right">
+  <%=
+  number_with_delimiter(investor_stock.shares_total_count)
+  %>
 </td>
-<td>
-    <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
+<td class="text-right">
+  <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
-<td>
-    <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
+<td class="text-right">
+  <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
 </td>
-<td>
-    TODO
-    <!-- TODO when at least one qurter will be present on an investor_stock: percentage_change_in_owned_shares_from_last_quarter -->
+<td class="text-right <%= stock_change_css_class(investor_stock.investor_stock_quarters.last.percentage_change_in_owned_shares_from_last_quarter) if investor_stock.investor_stock_quarters.last %>">
+  <% if investor_stock.investor_stock_quarters.last %>
+    <% if investor_stock.investor_stock_quarters.last.percentage_change_in_owned_shares_from_last_quarter %>
+      <%= number_with_precision(investor_stock.investor_stock_quarters.last.percentage_change_in_owned_shares_from_last_quarter, precision: 2) %>%
+    <% else %>
+      <span class="stock-new-buy">NEW BUY</span>
+    <% end %>
+  <% else %>
+    -
+  <% end %>
 </td>
-<td>
-    <%= investor_stock.percentage_shares_outstanding.round(2) %>%
+<td class="text-right">
+  <%= number_with_precision(investor_stock.percentage_shares_outstanding, precision: 2) %>%
 </td>
-<td class="<%= stock_change_css_class(investor_stock.stock.percentage_three_last_months_price_change) %>">
-    <%= investor_stock.stock.percentage_three_last_months_price_change.round(2) %>%
+<td class="text-right <%= stock_change_css_class(investor_stock.stock.percentage_three_last_months_price_change) %>">
+  <%= investor_stock.stock.percentage_three_last_months_price_change.round(2) %>%
 </td>
-<td class="<%= stock_change_css_class(investor_stock.stock.percentage_year_to_date_price_change) %>">
-    <%= investor_stock.stock.percentage_year_to_date_price_change.round(2) %>%
+<td class=" text-right <%= stock_change_css_class(investor_stock.stock.percentage_year_to_date_price_change) %>">
+  <%= investor_stock.stock.percentage_year_to_date_price_change.round(2) %>%
 </td>
 
 
