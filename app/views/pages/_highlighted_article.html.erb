@@ -1,4 +1,4 @@
-<% highlighted_article =  @api_response.first["articles"].first %>
+<% highlighted_article =  @api_response.first %>
 <div class="home-news-card">
   <%= link_to highlighted_article["url"] do %>
   <div class="home-news-image" style="background-image: url('<%= highlighted_article["urlToImage"] %>')">
