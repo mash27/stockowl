@@ -3,49 +3,47 @@
     <th>
       Quarter
     </th>
-    <th>
+    <th class="text-right">
       Shares bought/sold
     </th>
-    <th>
+    <th class="text-right">
       % Change
     </th>
-    <th>
+    <th class="text-right">
       Quarter End Shares
     </th>
-    <th>
+    <th class="text-right">
       Average Price
     </th>
   </thead>
 
   <tbody>
     <% investor_stock_quarters.each do |investor_stock_quarter| %>
-      <tr>
-        <td>
-          <p>
-            <%= investor_stock_quarter.designation %>
-          </p>
-        </td>
-        <td>
-          <p>
-            <%= investor_stock_quarter.traded_shares_count %>
-          </p>
-        </td>
-        <td>
-          <p>
-            <%= investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter %>
-          </p>
-        </td>
-        <td>
-          <p>
-            <%= investor_stock_quarter.shares_count_at_the_end %>
-          </p>
-        </td>
-        <td>
-          <p>
-            <%= investor_stock_quarter.stock_average_price %>
-          </p>
-        </td>
-      </tr>
+    <tr>
+      <td>
+        <%= investor_stock_quarter.designation %>
+      </td>
+      <td class="text-right <%= holding_change_css_class(investor_stock_quarter.traded_shares_count) %>">
+        <% if investor_stock_quarter.traded_shares_count %>
+        <%= number_with_delimiter(investor_stock_quarter.traded_shares_count) %>
+        <% else %>
+        -
+        <% end %>
+      </td>
+      <td class="text-right <%= holding_change_css_class(investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter) %>">
+        <% if investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter %>
+        <%= number_with_precision(investor_stock_quarter.percentage_change_in_owned_shares_from_last_quarter, precision: 2) %>%
+        <% else %>
+        -
+        <% end %>
+      </td>
+      <td class="text-right">
+        <%= number_with_delimiter(investor_stock_quarter.shares_count_at_the_end) %>
+      </td>
+      <td class="text-right">
+      $<%= investor_stock_quarter.stock_average_price %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
