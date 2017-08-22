@@ -24,16 +24,27 @@ class InvestorsController < ApplicationController
 
       [['Quarter', 'Q End Shares', 'Average price']] + processed_investor_stock_quarters
     end
+
+
+    @investor_stocks = @investor.investor_stocks
+
+    # SORTING our stocks
+    case params[:sort]
+    when 'weight-desc'
+      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :desc)
+    when 'weight-asc'
+      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :asc)
+    end
    # end
     # Build all the current daily series price for all stocks of this investor
 
-    @stocks = @investor.stocks.map do |stock|
-      daily_price_serie = GetCurrentDailyPriceSeriesForStockService.new(stock.ticker).call
-      # See stock.rb, attr_accessor just to bundle together a stock and its current daily price serie
-      # from the API
-      stock.daily_price_serie = daily_price_serie
-      stock
-    end
+    # @stocks = @investor.stocks.map do |stock|
+    #   daily_price_serie = GetCurrentDailyPriceSeriesForStockService.new(stock.ticker).call
+    #   # See stock.rb, attr_accessor just to bundle together a stock and its current daily price serie
+    #   # from the API
+    #   stock.daily_price_serie = daily_price_serie
+    #   stock
+    # end
   end
 
     # @stocks = @investor.stocks.map do |stock|

@@ -17,20 +17,39 @@
   }
 }
 
+.description {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.card-image {
+  height: 191px;
+  width: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.top-items {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+}
+
 #preview {
-  padding: 50px 0;
   display: flex;
   justify-content: space-between;
-  padding-top: 75px;
   flex-direction: row;
   align-items: flex-start;
+  width: 500px;
+  flex-direction: column;
+  height: 500px;
   img {
     height: 191px;
   }
   ul {
     li {
       font-size: 16px;
-      line-height: 39px;
+      line-height: 25px;
       text-align: left;
       font-variant: petite-caps;
     }
@@ -43,7 +62,6 @@
 .investor-card-highlighted {
   height: 100vh;
   position: fixed;
-  top: 70px;
   width: 500px;
 }
 
@@ -70,6 +88,7 @@
   img {
     margin: 0;
     height: 191px;
+    width: 200px;
   }
   .content {
     flex: 0 0 50%;
@@ -106,7 +125,6 @@
   width: 100%;
 }
 .view-btn {
-  color: #0D5276;
   text-transform: uppercase;
   padding: 5px 10px;
   // border-radius: 2px;
@@ -116,12 +134,25 @@
   -webkit-transition: all .15s ease;
   transition: all .5s ease;
   border: solid;
+  text-decoration: none;
+  color: #0D5276;
   &:hover {
     text-decoration: none;
-    color: rgba(128, 128, 128, 0.53);
     cursor: pointer;
   }
 }
+
+// .view-btn-blue {
+//   &:hover {
+//     color: rgba(128, 128, 128, 0.53);
+//   }
+// }
+// .view-btn-white {
+//   color: white;
+//   &:hover {
+//     color: rgba(128, 128, 128, 0.53);
+//   }
+// }
 .card-user {
   width: 45%;
   border-radius: 50%;
@@ -149,12 +180,13 @@
 // }
 .i-name {
   font-size: 28px;
-  color: rgba(51, 51, 51, 0.95);
+  color: rgba(37, 36, 36, 0.95)
 }
 .w3-tag.title {
   background-color: #0D5276 !important;
   padding-bottom: 2px !important;
   box-shadow: 2px 2px 8px #888888;
+  text-rendering: geometricPrecision !important;
 }
 .w3-center.w3-padding-64 {
   position: absolute;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817161257) do
+ActiveRecord::Schema.define(version: 20170822093006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20170817161257) do
     t.string  "designation"
     t.integer "traded_shares_count"
     t.integer "shares_count_at_the_end"
-    t.integer "percentage_change_in_owned_shares_from_last_quarter"
-    t.integer "stock_average_price"
+    t.float   "percentage_change_in_owned_shares_from_last_quarter"
+    t.float   "stock_average_price"
     t.index ["investor_stock_id"], name: "index_investor_stock_quarters_on_investor_stock_id", using: :btree
   end
 
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170817161257) do
     t.datetime "updated_at",                                          null: false
     t.integer  "shares_total_count"
     t.integer  "latest_quarter_shares_total_value"
-    t.integer  "percentage_weight_compared_to_portfolio_total_value"
-    t.integer  "percentage_shares_outstanding"
+    t.float    "percentage_weight_compared_to_portfolio_total_value"
+    t.float    "percentage_shares_outstanding"
     t.index ["investor_id"], name: "index_investor_stocks_on_investor_id", using: :btree
     t.index ["stock_id"], name: "index_investor_stocks_on_stock_id", using: :btree
   end
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170817161257) do
     t.datetime "updated_at",      null: false
     t.string   "portfolio_value"
     t.string   "photo"
+    t.text     "description"
   end
 
   create_table "operations", force: :cascade do |t|
@@ -63,13 +64,13 @@ ActiveRecord::Schema.define(version: 20170817161257) do
     t.string   "ticker"
     t.string   "company_name"
     t.string   "sector"
-    t.integer  "current_price"
+    t.float    "current_price"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.integer  "shares_outstanding"
-    t.integer  "market_cap_in_millions"
-    t.integer  "percentage_three_last_months_price_change"
-    t.integer  "percentage_year_to_date_price_change"
+    t.float    "shares_outstanding"
+    t.float    "market_cap_in_millions"
+    t.float    "percentage_three_last_months_price_change"
+    t.float    "percentage_year_to_date_price_change"
   end
 
   create_table "user_stocks", force: :cascade do |t|

@@ -60,16 +60,18 @@
         Current Price
       </th>
       <th>
-        Market Cap
+        Market Cap ($ Mil)
       </th>
       <th>
         Shares
       </th>
       <th>
-        Value
+        Value ($1000)
       </th>
       <th>
-        % Weight
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')) do %>
+          % Weight
+        <% end %>
       </th>
       <th>
         % Share Change from last Q
@@ -86,7 +88,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @investor.investor_stocks.each do |investor_stock| %>
+    <% @investor_stocks.each do |investor_stock| %>
     <tr>
       <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
 

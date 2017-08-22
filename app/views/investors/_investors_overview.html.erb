@@ -1,0 +1,32 @@
+  <div class="wrapper">
+    <% @investors.each do |investor| %>
+
+    <div class="col-xs-12">
+      <div class="investor-card-description">
+        <div class="card-image" data-image="<%= image_path investor.photo %>" style="background-image:url('<%= image_path investor.photo %>');"></div>
+        <div class="content">
+          <a class="card-link" href="#" ></a>
+          <h3 class="i-name"><%= investor.first_name %> <%= investor.last_name %></h3>
+          <p class="f-name"><%= investor.fund_name %></p>
+          <p class="p-value"><%= investor.portfolio_value %></p>
+          <div class="view-btn-container">
+            <%= link_to "Preview", "#", class: "btn-preview view-btn view-btn-white"%>
+            <%= link_to "View More", investor_path(investor), class: "view-btn view-btn-white"%>
+          </div>
+        </div>
+        <div class="content-for-preview hidden">
+          <div class="description">
+            <%= investor.description.split(" ").first(30).join(" ") %>...
+          </div>
+          <ul>
+            <% investor.stocks.each do |stock| %>
+            <li>
+              <%= stock.company_name %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>

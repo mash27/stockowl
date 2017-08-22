@@ -5,6 +5,7 @@ class GetCurrentDailyPriceSeriesForStockService
   def initialize(company_ticker)
     @company_ticker = company_ticker
     p @company_ticker
+    p 'company ticker'
   end
 
   def call

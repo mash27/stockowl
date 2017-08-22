@@ -11,29 +11,31 @@
   <%= investor_stock.stock.current_price %>
 </td>
 <td>
-    <%= investor_stock.stock.market_cap_in_millions %>
+    <%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
 </td>
 <td>
-    <%= investor_stock.shares_total_count %>
+    <%=
+    number_with_delimiter(investor_stock.shares_total_count)
+   %>
 </td>
 <td>
-    <%= investor_stock.latest_quarter_shares_total_value %>
+    <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
 <td>
-    <%= investor_stock.percentage_weight_compared_to_portfolio_total_value %>
+    <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
 </td>
 <td>
-    50
+    TODO
     <!-- TODO when at least one qurter will be present on an investor_stock: percentage_change_in_owned_shares_from_last_quarter -->
 </td>
 <td>
-    <%= investor_stock.percentage_shares_outstanding %>
+    <%= investor_stock.percentage_shares_outstanding.round(2) %>%
 </td>
-<td>
-    <%= investor_stock.stock.percentage_three_last_months_price_change %>
+<td class="<%= stock_change_css_class(investor_stock.stock.percentage_three_last_months_price_change) %>">
+    <%= investor_stock.stock.percentage_three_last_months_price_change.round(2) %>%
 </td>
-<td>
-    <%= investor_stock.stock.percentage_year_to_date_price_change %>
+<td class="<%= stock_change_css_class(investor_stock.stock.percentage_year_to_date_price_change) %>">
+    <%= investor_stock.stock.percentage_year_to_date_price_change.round(2) %>%
 </td>
 
 
