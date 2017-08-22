@@ -22,7 +22,7 @@
     <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
 <td>
-    <%= investor_stock.percentage_weight_compared_to_portfolio_total_value.round(2) %>%
+    <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
 </td>
 <td>
     TODO
@@ -31,10 +31,10 @@
 <td>
     <%= investor_stock.percentage_shares_outstanding.round(2) %>%
 </td>
-<td>
+<td class="<%= stock_change_css_class(investor_stock.stock.percentage_three_last_months_price_change) %>">
     <%= investor_stock.stock.percentage_three_last_months_price_change.round(2) %>%
 </td>
-<td>
+<td class="<%= stock_change_css_class(investor_stock.stock.percentage_year_to_date_price_change) %>">
     <%= investor_stock.stock.percentage_year_to_date_price_change.round(2) %>%
 </td>
 

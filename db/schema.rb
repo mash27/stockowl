@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170822155616) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170822155616) do
     t.string  "designation"
     t.integer "traded_shares_count"
     t.integer "shares_count_at_the_end"
-    t.integer "percentage_change_in_owned_shares_from_last_quarter"
-    t.integer "stock_average_price"
+    t.float   "percentage_change_in_owned_shares_from_last_quarter"
+    t.float   "stock_average_price"
     t.index ["investor_stock_id"], name: "index_investor_stock_quarters_on_investor_stock_id", using: :btree
   end
 
