@@ -4,7 +4,7 @@
   <%= image_tag "stockowl-name.png" %>
   <% end %>
 
-    <!-- Left Navigation -->
+  <!-- Left Navigation -->
   <div class="navbar-wagon-left hidden-xs hidden-sm">
     <!-- Profile picture with dropdown list -->
 
@@ -17,31 +17,52 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
    <%= link_to "How It Works", pages_tour_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Get Social", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+   <%= link_to "Get Social", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
+   <% if user_signed_in? %>
 
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+   <!-- Profile picture with dropdown list -->
+   <div class="navbar-wagon-item">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Host</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Messagese</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+      <%= image_tag current_user.photo, class: "avatar dropdown-toggle dropdown-button", id: "navbar-wagon-menu", "data-activates" => "dropdown1", "data-beloworigin" => true, "data-constrainwidth" => false %>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content brand-color' style="width: 200px !important">
+        <li><%= link_to account_path do %>
+          <%= t(".profile", default: "Account") %>
+          <% end %></li>
+          <li><%= link_to root_path do %>
+            <%= t(".profile", default: "Home") %>
+            <% end %></li>
+
+            <li class="divider"></li>
+
+            <li><%= link_to pages_about_path do %>
+              <%= t(".profile", default: "About") %>
+              <% end %></li>
+              <li><%= link_to pages_faq_path do %>
+                <%= t(".profile", default: "FAQ") %>
+                <% end %></li>
+                <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= t(".sign_out", default: "Log out") %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+
+            <% else %>
+
+            <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            <% end %>
+          </div>
+          <!-- Dropdown appearing on mobile only -->
+          <div class="navbar-wagon-item hidden-md hidden-lg">
+            <div class="dropdown">
+              <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li><a href="#">Host</a></li>
+                <li><a href="#">Trips</a></li>
+                <li><a href="#">Messagese</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
