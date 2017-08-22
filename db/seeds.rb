@@ -42,11 +42,11 @@ investor_tepper.save
 
 investor_buffett = Investor.new({
   first_name: 'Warren',
-  last_name: 'Buffet',
+  last_name: 'Buffett',
   fund_name: 'Berkshire Hathaway',
   portfolio_value: '$161,874 Mil',
   last_update: "",
-  description: GetDescriptionService.new().searcher("Warren Buffet")
+  description: GetDescriptionService.new().searcher("Warren Buffett")
   # photo: ""
   })
 investor_buffett.remote_photo_url = 'https://pbs.twimg.com/profile_images/3599636117/8468a03db84ec4211c3efeba18ac3925_400x400.png'
@@ -137,12 +137,12 @@ investor_einhorn.remote_photo_url = 'https://iialpha.euromoneycdn.com/images/107
 investor_einhorn.save
 
 investor_loeb = Investor.new({
-  first_name: 'Dan',
+  first_name: 'Daniel S.',
   last_name: 'Loeb',
   fund_name: 'Third Point, LLC',
   portfolio_value: '$11,282 Mil',
   last_update: "",
-  description: GetDescriptionService.new().searcher("Dan Loeb")
+  description: GetDescriptionService.new().searcher("Daniel S. Loeb")
   # photo: ""
   })
 investor_loeb.remote_photo_url = 'http://www.thirdpoint.com/wp-content/uploads/2015/06/DanielLoeb_thumb-e1433271433273.jpg'

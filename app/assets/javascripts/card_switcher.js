@@ -8,8 +8,9 @@ $(document).ready(function(){
     changeDescription(this)
   })
 
-  $('.btn-preview').on('click', function() {
+  $('.btn-preview').on('click', function(event) {
     // getDescription($(this).find('h3').text())
+    event.preventDefault()
     $('.preview-box').removeClass('hidden');
     changeText(this)
     changeStocks(this)

@@ -18,8 +18,8 @@
 }
 
 .description {
-      font-size: 16px;
-    line-height: 30px;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 .card-image {
@@ -30,9 +30,9 @@
 }
 
 .top-items {
-      width: 500px;
-    display: flex;
-    justify-content: space-around;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #preview {
@@ -125,7 +125,6 @@
   width: 100%;
 }
 .view-btn {
-  color: #0D5276;
   text-transform: uppercase;
   padding: 5px 10px;
   // border-radius: 2px;
@@ -135,12 +134,25 @@
   -webkit-transition: all .15s ease;
   transition: all .5s ease;
   border: solid;
+  text-decoration: none;
+  color: #0D5276;
   &:hover {
     text-decoration: none;
-    color: rgba(128, 128, 128, 0.53);
     cursor: pointer;
   }
 }
+
+// .view-btn-blue {
+//   &:hover {
+//     color: rgba(128, 128, 128, 0.53);
+//   }
+// }
+// .view-btn-white {
+//   color: white;
+//   &:hover {
+//     color: rgba(128, 128, 128, 0.53);
+//   }
+// }
 .card-user {
   width: 45%;
   border-radius: 50%;
@@ -174,6 +186,7 @@
   background-color: #0D5276 !important;
   padding-bottom: 2px !important;
   box-shadow: 2px 2px 8px #888888;
+  text-rendering: geometricPrecision !important;
 }
 .w3-center.w3-padding-64 {
   position: absolute;
