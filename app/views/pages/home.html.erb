@@ -2,71 +2,165 @@
 <%= image_tag "market_indexes.png", class: "home-market-indexes-image" %>
 <% end %>
 
-<div class="container-fluid">
+<div class="background-home">
   <div class="row">
     <div class="col-md-6">
       <!-- HERE'S WHERE THE GRAPH GOES -->
       <div class="home-investor-card">
         <div class="home-investor-card-content">
-        <div class="home-investor-image" style="background-image: url('<%= image_path 'stockowl_home_investor_tepper.jpg' %>');"></div>
-
-          <div><h4>Investing Master: David Tepper</h4></div>
-
-          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> U.S.A.</h5></div>
-
-          <div><h5>Net Worth: <i class="fa fa-dollar" aria-hidden="true"></i> 9.94 Billion</h5></div>
-
-          <div><h5>Description: David Tepper is one of the most well known value investors in America. Tepper's proven track record of an estimated 30% annual returns per year for his fund, Appaloosa, has made him one of the  leading strategiest in the industry (rivaling the popularity of the notorious Warren Buffet). At StockOwl, we choose investors, like Tepper, to emulate his investment strategies. Click the button below and browse our list of investors and their portfolio details.  </h5></div>
-
+          <div class="home-investor-image" style="background-image: url('<%= image_path 'stockowl_home_investor_tepper.jpg' %>');">
+          </div>
+          <h4>
+            Investing Master David Tepper
+          </h4>
+          <p class="icons">
+            <strong class="icon">
+              <i class="fa fa-globe" aria-hidden="true"></i>
+            </strong>
+            U.S.A.
+            <strong class="icon">
+              Net Worth: <i class="fa fa-dollar" aria-hidden="true"></i>
+            </strong>
+            9.94 Billion
+          </p>
+          <p class="description">
+            David Tepper is one of the most well known value investors in America. Tepper's proven track record of an estimated 30% annual returns per year for his fund, Appaloosa, has made him one of the  leading strategiest in the industry (rivaling the popularity of the notorious Warren Buffet). At StockOwl, we choose investors, like Tepper, to emulate his investment strategies. Click the button below and browse our list of investors and their portfolio details.
+          </p>
           <div class="home-btn-container">
-            <%= link_to "see more Masters", investors_path, class: "btn btn-primary"%></div>
+            <%= link_to "see more Masters", investors_path, class: "btn btn-primary"%>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-<div class="container-fluid">
-  <div class="row">
     <div class="col-md-6">
       <!-- HERE'S WHERE THE GRAPH GOES -->
-      <div class="home-events-card">
-        <div class="home-events-card-content">
-        <div class="home-events-image" style="background-image: url('<%= image_path 'stockowl_brickwall.jpeg' %>');"></div>
+      <div class="container-cards">
+        <center>
+          <div class="card-media-event-banner" style="background-image: url('<%= image_path 'stockowl_home_event_banner_sept.png' %>');"></div>
+        </center>
 
-          <div><h4>Investing Master: David Tepper</h4></div>
-
-          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> U.S.A.</h5></div>
-
-          <div><h5>Net Worth: <i class="fa fa-dollar" aria-hidden="true"></i> 9.94 Billion</h5></div>
-
-          <div><h5>Description: David Tepper is one of the most well known value investors in America. Tepper's proven track record of an estimated 30% annual returns per year for his fund, Appaloosa, has made him one of the  leading strategiest in the industry (rivaling the popularity of the notorious Warren Buffet).  </h5></div>
-
-          <div class="home-btn-container">
-            <%= link_to "see more Masters", investors_path, class: "btn btn-primary"%></div>
+        <div class="card-media">
+          <!-- media container -->
+          <div class="card-media-object-container">
+            <div class="card-media-object" style="background-image: url('<%= image_path 'stockowl_event1.jpg' %>');"></div>
+            <span class="card-media-object-tag subtle">In Demand</span>
+            <ul class="card-media-object-social-list">
+              <li>
+                <img src="https://s10.postimg.org/3rjjbzcvd/profile_f.jpg" class="">
+              </li>
+              <li>
+                <img src="https://s16.postimg.org/b0j0djh79/profile_0_f.jpg" class="">
+              </li>
+              <li class="card-media-object-social-list-item-additional">
+                <span>+2</span>
+              </li>
+            </ul>
+          </div>
+          <!-- body container -->
+          <div class="card-media-body">
+            <div class="card-media-body-top">
+              <span class="subtle">Mon, SEPT 04, 7:00 PM</span>
+              <div class="card-media-body-top-icons u-float-right">
+                <svg fill="#888888" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                </svg>
+                <svg fill="#888888" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <span class="card-media-body-heading">Want to start investing but too intimidated to get started? Meet with others in our community to socialize and learn about getting started in value investing. We will start with drinks, followed by an informative lecture by one of our very own co-founders, Ash Madi.</span>
+            <div class="card-media-body-supporting-bottom">
+              <span class="card-media-body-supporting-bottom-text subtle">1 Hallidie Plaza #305, San Francisco, CA</span>
+              <span class="card-media-body-supporting-bottom-text subtle u-float-right">Free</span>
+            </div>
+            <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+              <span class="card-media-body-supporting-bottom-text subtle">#ValueInvesting #StockParty</span>
+              <a href="#/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Reserve Now</a>
+            </div>
           </div>
         </div>
+
+        <div class="card-media">
+          <!-- media container -->
+          <div class="card-media-object-container">
+            <div class="card-media-object" style="background-image: url('<%= image_path 'stockowl_event2.jpg' %>');"></div>
+            <ul class="card-media-object-social-list">
+              <li>
+                <img src="https://s13.postimg.org/c5aoiq1w7/stock3_f.jpg" class="">
+              </li>
+            </ul>
+          </div>
+          <!-- body container -->
+          <div class="card-media-body">
+            <div class="card-media-body-top">
+              <span class="subtle">Fri, SEPT 16, 7:00 PM</span>
+              <div class="card-media-body-top-icons u-float-right">
+                <svg fill="#888888" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                </svg>
+                <svg fill="#888888" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <span class="card-media-body-heading">You may be worried about the daily fluctuations in the market, but one money drainer you may not be thinking of is trade fees. Whether fees are $5, $10, or nothing for each trade, you want the best deal around, right? Let us help you make the right choice. Let's grab a drink and listen to our co-founder, Sandi Huynh, explain the intricacies of trading platforms, fees, and commissions.</span>
+            <div class="card-media-body-supporting-bottom">
+              <span class="card-media-body-supporting-bottom-text subtle">120 E. 8th St. #512, Los Angeles, CA</span>
+              <span class="card-media-body-supporting-bottom-text subtle u-float-right">Free</span>
+            </div>
+            <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
+              <span class="card-media-body-supporting-bottom-text subtle">#LetsMake$$NotWar #My$$IsMy$$</span>
+              <a href="#/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Reserve Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    <div class="contest-banner col-xs-12">
+      <div class="contest-banner-content" style="background-image: url('<%= image_path 'stockowl_home_contest_banner_final.png' %>');">
+      </div>
+    </div>
+
+    <div class="col-xs-9 col-xs-offset-3">
+      <form action="https://formspree.io/admin@stockowl.io"
+      method="POST" class="form-inline idea-form">
+      <div class="form-group">
+        <label for="name"></label>
+        <input class="form-control" type="text" placeholder="Name" id="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email"></label>
+        <input class="form-control" type="text" placeholder="Email" id="email">
+      </div>
+
+      <div class="form-group">
+        <label for="description"></label>
+        <input class="form-control" type="text" placeholder="Idea Here!" id="idea">
+      </div>
+
+      <input type="submit" class="btn btn-primary">
+    </form>
   </div>
-</div>
 
-
-
-
-
-  <div class="col-md-4">
+  <div class="col-md-4" id="news">
     <%= render partial: "highlighted_article" %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" id="news">
     <%= render partial: "news_list" %>
+  </div>
+  <div class="col-md-4" id="news">
+    <%= render partial: "news_list_col2" %>
   </div>
 </div>
 </div>
-</div>
 
-<!-- <center>
-<h2>COMING SOON:</h2>
-<h3>Market Index table/chart</h3>
-<h3>MeetUp event list?</h3>
-</center>
--->
+
