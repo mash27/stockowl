@@ -239,7 +239,7 @@ stock_BAM = Stock.create!({
 stock_CMCSA_current_price =  40.52
 stock_CMCSA = Stock.create!({
   ticker: "CMCSA",
-  company_name: "BComcast Corp",
+  company_name: "Comcast Corp",
   sector: "Services",
   current_price: stock_CMCSA_current_price,
   shares_outstanding: (4.7 * 1000),
@@ -390,7 +390,7 @@ stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holdin
 # stock_lng = Stock.create!({ ticker: "LNG", company_name: "Cheniere Energy Inc", sector: "Energy", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
 
-puts "Creating investor stocks..."
+puts "Creating investor stocks and holding history..."
 
 shares_total_count_ADS = 938698
 stock_greenberg_ADS = InvestorStock.create!(
@@ -406,8 +406,13 @@ InvestorStockQuarter.create!(
     designation: "2017Q3",
     traded_shares_count: 938698,
     shares_count_at_the_end: 938698,
+<<<<<<< HEAD
     percentage_change_in_owned_shares_from_last_quarter: nil,
     stock_average_price: 215
+=======
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 256.12
+>>>>>>> 06d510a76338ad8d7d67787dec9e448ce5f6f2e4
     )
 
 shares_total_count_AR = 11459921
@@ -419,6 +424,39 @@ stock_greenberg_AR = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_AR.fdiv(stock_AR.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 9647226
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AR,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 25.56
+    )
+
+previous_shares_count = shares_count
+shares_count = 10593829
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AR,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 21.28
+    )
+
+previous_shares_count = shares_count
+shares_count = 11459921
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AR,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 18.61
+    )
+
 shares_total_count_AXTA = 3859691
 stock_greenberg_AXTA = InvestorStock.create!(
   investor: investor_greenberg,
@@ -427,6 +465,39 @@ stock_greenberg_AXTA = InvestorStock.create!(
   latest_quarter_shares_total_value: 123664,
   percentage_shares_outstanding: shares_total_count_AXTA.fdiv(stock_AXTA.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 4443376
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AXTA,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 29.66
+    )
+
+previous_shares_count = shares_count
+shares_count = 4400048
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AXTA,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 31.29
+    )
+
+previous_shares_count = shares_count
+shares_count = 3859691
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_AXTA,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 29.04
+    )
 
 shares_total_count_BAC = 14532
 stock_greenberg_BAC = InvestorStock.create!(
@@ -437,6 +508,39 @@ stock_greenberg_BAC = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_BAC.fdiv(stock_BAC.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 14532
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAC,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 25.56
+    )
+
+previous_shares_count = shares_count
+shares_count = 14532
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAC,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 21.28
+    )
+
+previous_shares_count = shares_count
+shares_count = 14532
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAC,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 21.28
+    )
+
 shares_total_count_BAM = 4690948
 stock_greenberg_BAM = InvestorStock.create!(
   investor: investor_greenberg,
@@ -445,6 +549,39 @@ stock_greenberg_BAM = InvestorStock.create!(
   latest_quarter_shares_total_value: 183932,
   percentage_shares_outstanding: shares_total_count_BAM.fdiv(stock_BAM.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 6683668
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAM,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 36.39
+    )
+
+previous_shares_count = shares_count
+shares_count = 6636977
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAM,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 38.43
+    )
+
+previous_shares_count = shares_count
+shares_count = 4690948
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_BAM,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 38.84
+    )
 
 shares_total_count_CMCSA = 32194
 stock_greenberg_CMCSA = InvestorStock.create!(
@@ -455,6 +592,39 @@ stock_greenberg_CMCSA = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_CMCSA.fdiv(stock_CMCSA.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 16097
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_CMCSA,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 37.73
+    )
+
+previous_shares_count = shares_count
+shares_count = 32194
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_CMCSA,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 38.81
+    )
+
+previous_shares_count = shares_count
+shares_count = 32194
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_CMCSA,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 41.90
+    )
+
 shares_total_count_HCA = 3080347
 stock_greenberg_HCA = InvestorStock.create!(
   investor: investor_greenberg,
@@ -463,6 +633,39 @@ stock_greenberg_HCA = InvestorStock.create!(
   latest_quarter_shares_total_value: 268606,
   percentage_shares_outstanding: shares_total_count_HCA.fdiv(stock_HCA.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 3617751
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_HCA,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 83.71
+    )
+
+previous_shares_count = shares_count
+shares_count = 3097983
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_HCA,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 83.82
+    )
+
+previous_shares_count = shares_count
+shares_count = 3080347
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_HCA,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 79.52
+    )
 
 shares_total_count_JPM = 1677185
 stock_greenberg_JPM = InvestorStock.create!(
@@ -473,6 +676,39 @@ stock_greenberg_JPM = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_JPM.fdiv(stock_JPM.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 2560143
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_JPM,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 83.71
+    )
+
+previous_shares_count = shares_count
+shares_count = 1692041
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_JPM,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 83.82
+    )
+
+previous_shares_count = shares_count
+shares_count = 1677185
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_JPM,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 79.52
+    )
+
 shares_total_count_LBTYA = 266868
 stock_greenberg_LBTYA = InvestorStock.create!(
   investor: investor_greenberg,
@@ -481,6 +717,39 @@ stock_greenberg_LBTYA = InvestorStock.create!(
   latest_quarter_shares_total_value: 8572,
   percentage_shares_outstanding: shares_total_count_LBTYA.fdiv(stock_LBTYA.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 1157104
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYA,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 35.51
+    )
+
+previous_shares_count = shares_count
+shares_count = 1101199
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYA,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 30.02
+    )
+
+previous_shares_count = shares_count
+shares_count = 266868
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYA,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 34.51
+    )
 
 shares_total_count_LBTYK = 6738614
 stock_greenberg_LBTYK = InvestorStock.create!(
@@ -491,6 +760,39 @@ stock_greenberg_LBTYK = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_LBTYK.fdiv(stock_LBTYK.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 6761270
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYK,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 34.28
+    )
+
+previous_shares_count = shares_count
+shares_count = 6733386
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYK,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 29.49
+    )
+
+previous_shares_count = shares_count
+shares_count = 6738614
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_LBTYK,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 33.51
+    )
+
 shares_total_count_PRI = 1518440
 stock_greenberg_PRI = InvestorStock.create!(
   investor: investor_greenberg,
@@ -499,6 +801,39 @@ stock_greenberg_PRI = InvestorStock.create!(
   latest_quarter_shares_total_value: 115022,
   percentage_shares_outstanding: shares_total_count_PRI.fdiv(stock_PRI.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 1608035
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_PRI,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 79.72
+    )
+
+previous_shares_count = shares_count
+shares_count = 1559965
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_PRI,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 78.02
+    )
+
+previous_shares_count = shares_count
+shares_count = 1518440
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_PRI,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 81.55
+    )
 
 shares_total_count_Q = 1581553
 stock_greenberg_Q = InvestorStock.create!(
@@ -509,6 +844,17 @@ stock_greenberg_Q = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_Q.fdiv(stock_Q.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 1581553
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_Q,
+    designation: "2017Q3",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 89.50
+    )
+
 shares_total_count_SCHW = 7302503
 stock_greenberg_SCHW = InvestorStock.create!(
   investor: investor_greenberg,
@@ -517,6 +863,39 @@ stock_greenberg_SCHW = InvestorStock.create!(
   latest_quarter_shares_total_value: 313716,
   percentage_shares_outstanding: shares_total_count_SCHW.fdiv(stock_SCHW.shares_outstanding * 1000000) * 100
   )
+
+previous_shares_count = 0
+shares_count = 8204928
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_SCHW,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 41.10
+    )
+
+previous_shares_count = shares_count
+shares_count = 7651850
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_SCHW,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 40.46
+    )
+
+previous_shares_count = shares_count
+shares_count = 7302503
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_SCHW,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 41.12
+    )
 
 shares_total_count_ST = 2910230
 stock_greenberg_ST = InvestorStock.create!(
@@ -527,6 +906,39 @@ stock_greenberg_ST = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_ST.fdiv(stock_ST.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 2973093
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_ST,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 42.01
+    )
+
+previous_shares_count = shares_count
+shares_count = 2947474
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_ST,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 39.74
+    )
+
+previous_shares_count = shares_count
+shares_count = 2910230
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_ST,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 44.49
+    )
+
 shares_total_count_SERV = 1923916
 stock_greenberg_SERV = InvestorStock.create!(
   investor: investor_greenberg,
@@ -536,6 +948,17 @@ stock_greenberg_SERV = InvestorStock.create!(
   percentage_shares_outstanding: shares_total_count_SERV.fdiv(stock_SERV.shares_outstanding * 1000000) * 100
   )
 
+previous_shares_count = 0
+shares_count = 1923916
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_SERV,
+    designation: "2017Q3",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 39.19
+    )
+
 shares_total_count_TDW = 19625
 stock_greenberg_TDW = InvestorStock.create!(
   investor: investor_greenberg,
@@ -544,6 +967,39 @@ stock_greenberg_TDW = InvestorStock.create!(
   latest_quarter_shares_total_value: 14,
   percentage_shares_outstanding: shares_total_count_TDW.fdiv(stock_TDW.shares_outstanding * 1000000) * 100
 )
+
+previous_shares_count = 0
+shares_count = 19625
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_TDW,
+    designation: "2017Q1",
+    traded_shares_count: "",
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: "",
+    stock_average_price: 45.16
+    )
+
+previous_shares_count = shares_count
+shares_count = 19625
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_TDW,
+    designation: "2017Q2",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 22.58
+    )
+
+previous_shares_count = shares_count
+shares_count = 19625
+InvestorStockQuarter.create!(
+    investor_stock: stock_greenberg_TDW,
+    designation: "2017Q3",
+    traded_shares_count: shares_count - previous_shares_count,
+    shares_count_at_the_end: shares_count,
+    percentage_change_in_owned_shares_from_last_quarter: ((shares_count - previous_shares_count).fdiv(previous_shares_count)) * 100,
+    stock_average_price: 23.83
+    )
 
 
 total_value_for_all_greenberg_stocks = investor_greenberg.investor_stocks.reduce(0) {|sum, investor_stock| sum + investor_stock.latest_quarter_shares_total_value }
@@ -664,9 +1120,6 @@ stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stoc
 # stock_pickens_baba = InvestorStock.create!(investor: investor_pickens, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
 
 puts "Creating investor stock quarters..."
-
-
-
 
 4.times do |index|
   InvestorStockQuarter.create!(
