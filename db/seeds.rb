@@ -173,7 +173,7 @@ investor_rolfe.remote_photo_url = 'https://gurufocus.s3.amazonaws.com/conference
 investor_rolfe.save
 
 
-puts "Creating stocks..."
+puts "Creating Greenberg stocks..."
 
 
 stock_ADS_current_price =  221.27
@@ -404,15 +404,136 @@ stock_ESRX = Stock.create!({
   percentage_year_to_date_price_change: (((stock_ESRX_current_price - 69.40) / 69.40)* 100)
   })
 
+puts "Creating Tepper stocks..."
+
+stock_AGN_current_price =  223.75
+stock_AGN = Stock.create!({
+  ticker: "AGN",
+  company_name: "Allergan plc",
+  sector: "Healthcare",
+  current_price: stock_AGN_current_price,
+  shares_outstanding: 334.31,
+  market_cap_in_millions: (74.8 * 1000),
+  percentage_three_last_months_price_change: (((stock_AGN_current_price - 219.99) / 219.99) * 100),
+  percentage_year_to_date_price_change: (((stock_AGN_current_price - 214.27) / 214.27)* 100)
+  })
+
+stock_GOOG_current_price =  924.69
+stock_GOOG = Stock.create!({
+  ticker: "GOOG",
+  company_name: "Alphabet Inc",
+  sector: "Technology",
+  current_price: stock_GOOG_current_price,
+  shares_outstanding: 347.73,
+  market_cap_in_millions: (645.02 * 1000),
+  percentage_three_last_months_price_change: (((stock_GOOG_current_price - 948.82) / 948.82) * 100),
+  percentage_year_to_date_price_change: (((stock_GOOG_current_price - 786.14) / 786.14)* 100)
+  })
+
+stock_BABA_current_price =  174.46
+stock_BABA = Stock.create!({
+  ticker: "BABA",
+  company_name: "Alibaba Group Holding Limited",
+  sector: "Healthcare",
+  current_price: stock_BABA_current_price,
+  shares_outstanding: 2529.36,
+  market_cap_in_millions: (441.27 * 1000),
+  percentage_three_last_months_price_change: (((stock_BABA_current_price - 122.93) / 122.93) * 100),
+  percentage_year_to_date_price_change: (((stock_BABA_current_price - 88.60) / 88.60)* 100)
+  })
+
+stock_MU_current_price =  30.45
+stock_MU = Stock.create!({
+  ticker: "MU",
+  company_name: "Micron Technology, Inc",
+  sector: "Technology",
+  current_price: stock_MU_current_price,
+  shares_outstanding: (1.11 * 1000),
+  market_cap_in_millions: (33.8 * 1000),
+  percentage_three_last_months_price_change: (((stock_MU_current_price - 28.29) / 28.29) * 100),
+  percentage_year_to_date_price_change: (((stock_MU_current_price - 22.55) / 22.55)* 100)
+  })
+
+stock_WPZ_current_price = 38.20
+stock_WPZ = Stock.create!({
+  ticker: "WPZ",
+  company_name: "Williams Partners L.P",
+  sector: "Basic Materials",
+  current_price: stock_WPZ_current_price,
+  shares_outstanding: 955.81,
+  market_cap_in_millions: (37.17 * 1000),
+  percentage_three_last_months_price_change: (((stock_WPZ_current_price - 40.03) / 40.03) * 100),
+  percentage_year_to_date_price_change: (((stock_WPZ_current_price - 36.49) / 36.49)* 100)
+  })
+
+puts "Creating Buffett stocks..."
+
+stock_KHC_current_price =  85.05
+stock_KHC = Stock.create!({
+  ticker: "KHC",
+  company_name: "The Kraft Heinz Company",
+  sector: "Consumer Goods",
+  current_price: stock_KHC_current_price,
+  shares_outstanding: (1.22 * 1000),
+  market_cap_in_millions: (103.61 * 1000),
+  percentage_three_last_months_price_change: (((stock_KHC_current_price - 91.21) / 91.21) * 100),
+  percentage_year_to_date_price_change: (((stock_KHC_current_price - 85.75) / 85.75)* 100)
+  })
+
+stock_WFC_current_price =  52.22
+stock_WFC = Stock.create!({
+  ticker: "WFC",
+  company_name: "Wells Fargo & Company",
+  sector: "Financial",
+  current_price: stock_WFC_current_price,
+  shares_outstanding: (4.96 * 1000),
+  market_cap_in_millions: (259.22 * 1000),
+  percentage_three_last_months_price_change: (((stock_WFC_current_price - 53.00) / 53.00) * 100),
+  percentage_year_to_date_price_change: (((stock_WFC_current_price - 54.84) / 54.84)* 100)
+  })
+
+stock_AAPL_current_price =  159.78
+stock_AAPL = Stock.create!({
+  ticker: "AAPL",
+  company_name: "Apple Inc",
+  sector: "Consumer Goods",
+  current_price: stock_AAPL_current_price,
+  shares_outstanding: (5.17 * 1000),
+  market_cap_in_millions: (825.3 * 1000),
+  percentage_three_last_months_price_change: (((stock_AAPL_current_price - 153.20) / 153.20) * 100),
+  percentage_year_to_date_price_change: (((stock_AAPL_current_price - 114.72) / 114.72)* 100)
+  })
+
+stock_KO_current_price =  45.60
+stock_KO = Stock.create!({
+  ticker: "KO",
+  company_name: "The Coca-Cola Company",
+  sector: "Consumer Goods",
+  current_price: stock_KO_current_price,
+  shares_outstanding: (4.27 * 1000),
+  market_cap_in_millions: (194.5 * 1000),
+  percentage_three_last_months_price_change: (((stock_KO_current_price - 44.03) / 44.03) * 100),
+  percentage_year_to_date_price_change: (((stock_KO_current_price - 41.10) / 41.10)* 100)
+  })
+
+stock_AXP_current_price = 85.30
+stock_AXP = Stock.create!({
+  ticker: "AXP",
+  company_name: "American Express Company",
+  sector: "Financial",
+  current_price: stock_AXP_current_price,
+  shares_outstanding: 883.98,
+  market_cap_in_millions: (75.4 * 1000),
+  percentage_three_last_months_price_change: (((stock_AXP_current_price - 76.91) / 76.91) * 100),
+  percentage_year_to_date_price_change: (((stock_AXP_current_price - 74.44) / 74.44)* 100)
+  })
 
 
+# stock_agn = Stock.create!({ ticker: "AGN", company_name: "Allergan plc", sector: "Healthcare", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
 
+# stock_goog = Stock.create!({ ticker: "GOOG", company_name: "Alphabet Inc.", sector: "Technology", current_price: 920, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
-stock_agn = Stock.create!({ ticker: "AGN", company_name: "Allergan plc", sector: "Healthcare", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
-
-stock_goog = Stock.create!({ ticker: "GOOG", company_name: "Alphabet Inc.", sector: "Technology", current_price: 920, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
-
-stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holding Limited", sector: "Services", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
+# stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holding Limited", sector: "Services", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
 # stock_fb = Stock.create!({ ticker: "FB", company_name: "Facebook Inc", sector: "Technology", current_price: 232, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20})
 
@@ -429,7 +550,7 @@ stock_baba = Stock.create!({ ticker: "BABA", company_name: "Alibaba Group Holdin
 # stock_lng = Stock.create!({ ticker: "LNG", company_name: "Cheniere Energy Inc", sector: "Energy", current_price: 155, shares_outstanding: 335.87, market_cap_in_millions: 75493, percentage_three_last_months_price_change: 10, percentage_year_to_date_price_change: 20 })
 
 
-puts "Creating investor stocks and holding history..."
+puts "Creating Greenberg investor stocks and holding history..."
 
 shares_total_count_ADS = 938698
 stock_greenberg_ADS = InvestorStock.create!(
@@ -1187,118 +1308,125 @@ stock_greenberg_SERV.update(percentage_weight_compared_to_portfolio_total_value:
 
 stock_greenberg_TDW.update(percentage_weight_compared_to_portfolio_total_value: stock_greenberg_TDW.latest_quarter_shares_total_value.fdiv(total_value_for_all_greenberg_stocks) * 100)
 
+puts "Creating Tepper investor stocks and holding history..."
+
+shares_total_count_AGN = 2509619
+stock_tepper_AGN = InvestorStock.create!(
+  investor: investor_tepper,
+  stock: stock_AGN,
+  shares_total_count: shares_total_count_AGN,
+  latest_quarter_shares_total_value: 610063,
+  percentage_shares_outstanding: shares_total_count_AGN.fdiv(stock_AGN.shares_outstanding * 1000000) * 100
+)
+
+shares_total_count_GOOG = 585000
+stock_tepper_GOOG = InvestorStock.create!(
+  investor: investor_tepper,
+  stock: stock_GOOG,
+  shares_total_count: shares_total_count_GOOG,
+  latest_quarter_shares_total_value: 531607,
+  percentage_shares_outstanding: shares_total_count_GOOG.fdiv(stock_GOOG.shares_outstanding * 1000000) * 100
+)
+
+shares_total_count_BABA = 3693918
+stock_tepper_BABA = InvestorStock.create!(
+  investor: investor_tepper,
+  stock: stock_BABA,
+  shares_total_count: shares_total_count_BABA,
+  latest_quarter_shares_total_value: 520473,
+  percentage_shares_outstanding: shares_total_count_BABA.fdiv(stock_BABA.shares_outstanding * 1000000) * 100
+)
+
+shares_total_count_MU = 12900000
+stock_tepper_MU = InvestorStock.create!(
+  investor: investor_tepper,
+  stock: stock_MU,
+  shares_total_count: shares_total_count_MU,
+  latest_quarter_shares_total_value: 385194,
+  percentage_shares_outstanding: shares_total_count_MU.fdiv(stock_MU.shares_outstanding * 1000000) * 100
+)
+
+shares_total_count_WPZ = 9182449
+stock_tepper_WPZ = InvestorStock.create!(
+  investor: investor_tepper,
+  stock: stock_WPZ,
+  shares_total_count: shares_total_count_WPZ,
+  latest_quarter_shares_total_value: 368308,
+  percentage_shares_outstanding: shares_total_count_WPZ.fdiv(stock_WPZ.shares_outstanding * 1000000) * 100
+)
+
+total_value_for_all_tepper_stocks = investor_tepper.investor_stocks.reduce(0) {|sum, investor_stock| sum + investor_stock.latest_quarter_shares_total_value }
+
+stock_tepper_AGN.update(percentage_weight_compared_to_portfolio_total_value: stock_tepper_AGN.latest_quarter_shares_total_value.fdiv(total_value_for_all_tepper_stocks) * 100)
+
+stock_tepper_GOOG.update(percentage_weight_compared_to_portfolio_total_value: stock_tepper_GOOG.latest_quarter_shares_total_value.fdiv(total_value_for_all_tepper_stocks) * 100)
+
+stock_tepper_BABA.update(percentage_weight_compared_to_portfolio_total_value: stock_tepper_BABA.latest_quarter_shares_total_value.fdiv(total_value_for_all_tepper_stocks) * 100)
+
+stock_tepper_MU.update(percentage_weight_compared_to_portfolio_total_value: stock_tepper_MU.latest_quarter_shares_total_value.fdiv(total_value_for_all_tepper_stocks) * 100)
+
+stock_tepper_WPZ.update(percentage_weight_compared_to_portfolio_total_value: stock_tepper_WPZ.latest_quarter_shares_total_value.fdiv(total_value_for_all_tepper_stocks) * 100)
 
 
-stock_tepper_agn = InvestorStock.create!(investor: investor_tepper, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+puts "Creating Buffett investor stocks and holding history..."
 
-stock_tepper_goog = InvestorStock.create!(investor: investor_tepper, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+shares_total_count_KHC = 325634818
+stock_buffett_KHC = InvestorStock.create!(
+  investor: investor_buffett,
+  stock: stock_KHC,
+  shares_total_count: shares_total_count_KHC,
+  latest_quarter_shares_total_value: 27887366,
+  percentage_shares_outstanding: shares_total_count_KHC.fdiv(stock_KHC.shares_outstanding * 1000000) * 100
+)
 
-stock_tepper_baba = InvestorStock.create!(investor: investor_tepper, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+shares_total_count_WFC = 467987270
+stock_buffett_WFC = InvestorStock.create!(
+  investor: investor_buffett,
+  stock: stock_WFC,
+  shares_total_count: shares_total_count_WFC,
+  latest_quarter_shares_total_value: 25931175,
+  percentage_shares_outstanding: shares_total_count_WFC.fdiv(stock_WFC.shares_outstanding * 1000000) * 100
+)
 
-# stock_tepper_fb = InvestorStock.create!(investor: investor_tepper, stock: stock_fb, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+shares_total_count_AAPL = 130191960
+stock_buffett_AAPL = InvestorStock.create!(
+  investor: investor_buffett,
+  stock: stock_AAPL,
+  shares_total_count: shares_total_count_AAPL,
+  latest_quarter_shares_total_value: 18750246,
+  percentage_shares_outstanding: shares_total_count_AAPL.fdiv(stock_AAPL.shares_outstanding * 1000000) * 100
+)
 
-# stock_tepper_mu = InvestorStock.create!(investor: investor_tepper, stock: stock_mu, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+shares_total_count_KO = 400000000
+stock_buffett_KO = InvestorStock.create!(
+  investor: investor_buffett,
+  stock: stock_KO,
+  shares_total_count: shares_total_count_KO,
+  latest_quarter_shares_total_value: 17939999,
+  percentage_shares_outstanding: shares_total_count_KO.fdiv(stock_KO.shares_outstanding * 1000000) * 100
+)
 
-# stock_tepper_etp = InvestorStock.create!(investor: investor_tepper, stock: stock_etp, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+shares_total_count_AXP = 151610700
+stock_buffett_AXP = InvestorStock.create!(
+  investor: investor_buffett,
+  stock: stock_AXP,
+  shares_total_count: shares_total_count_AXP,
+  latest_quarter_shares_total_value: 12771685,
+  percentage_shares_outstanding: shares_total_count_AXP.fdiv(stock_AXP.shares_outstanding * 1000000) * 100
+)
 
-# stock_tepper_lng = InvestorStock.create!(investor: investor_tepper, stock: stock_lng, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+total_value_for_all_buffett_stocks = investor_buffett.investor_stocks.reduce(0) {|sum, investor_stock| sum + investor_stock.latest_quarter_shares_total_value }
 
-# stock_tepper_brk = InvestorStock.create!(investor: investor_tepper, stock: stock_brk, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+stock_buffett_KHC.update(percentage_weight_compared_to_portfolio_total_value: stock_buffett_KHC.latest_quarter_shares_total_value.fdiv(total_value_for_all_buffett_stocks) * 100)
 
-# stock_tepper_gm = InvestorStock.create!(investor: investor_tepper, stock: stock_gm, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+stock_buffett_WFC.update(percentage_weight_compared_to_portfolio_total_value: stock_buffett_WFC.latest_quarter_shares_total_value.fdiv(total_value_for_all_buffett_stocks) * 100)
 
-# stock_tepper_aapl = InvestorStock.create!(investor: investor_tepper, stock: stock_aapl, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+stock_buffett_AAPL.update(percentage_weight_compared_to_portfolio_total_value: stock_buffett_AAPL.latest_quarter_shares_total_value.fdiv(total_value_for_all_buffett_stocks) * 100)
 
-# stock_buffett_agn = InvestorStock.create!(investor: investor_buffett, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+stock_buffett_KO.update(percentage_weight_compared_to_portfolio_total_value: stock_buffett_KO.latest_quarter_shares_total_value.fdiv(total_value_for_all_buffett_stocks) * 100)
 
-# stock_buffett_goog = InvestorStock.create!(investor: investor_buffett, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_buffett_baba = InvestorStock.create!(investor: investor_buffett, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_gates_agn = InvestorStock.create!(investor: investor_gates, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_gates_goog = InvestorStock.create!(investor: investor_gates, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_gates_baba = InvestorStock.create!(investor: investor_gates, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_klarman_agn = InvestorStock.create!(investor: investor_klarman, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_klarman_goog = InvestorStock.create!(investor: investor_klarman, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_klarman_baba = InvestorStock.create!(investor: investor_klarman, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_einhorn_agn = InvestorStock.create!(investor: investor_einhorn, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_einhorn_goog = InvestorStock.create!(investor: investor_einhorn, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_einhorn_baba = InvestorStock.create!(investor: investor_einhorn, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_loeb_agn = InvestorStock.create!(investor: investor_loeb, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_loeb_goog = InvestorStock.create!(investor: investor_loeb, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_loeb_baba = InvestorStock.create!(investor: investor_loeb, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
+stock_buffett_AXP.update(percentage_weight_compared_to_portfolio_total_value: stock_buffett_AXP.latest_quarter_shares_total_value.fdiv(total_value_for_all_buffett_stocks) * 100)
 
 
-# stock_icahn_agn = InvestorStock.create!(investor: investor_icahn, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_icahn_goog = InvestorStock.create!(investor: investor_icahn, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_icahn_baba = InvestorStock.create!(investor: investor_icahn, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_rolfe_agn = InvestorStock.create!(investor: investor_rolfe, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_rolfe_goog = InvestorStock.create!(investor: investor_rolfe, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_rolfe_baba = InvestorStock.create!(investor: investor_rolfe, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_ackman_agn = InvestorStock.create!(investor: investor_ackman, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_ackman_goog = InvestorStock.create!(investor: investor_ackman, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_ackman_baba = InvestorStock.create!(investor: investor_ackman, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pabrai_agn = InvestorStock.create!(investor: investor_pabrai, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pabrai_goog = InvestorStock.create!(investor: investor_pabrai, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pabrai_baba = InvestorStock.create!(investor: investor_pabrai, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pickens_agn = InvestorStock.create!(investor: investor_pickens, stock: stock_agn, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pickens_goog = InvestorStock.create!(investor: investor_pickens, stock: stock_goog, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-# stock_pickens_baba = InvestorStock.create!(investor: investor_pickens, stock: stock_baba, shares_total_count: 2500000, latest_quarter_shares_total_value: 610063, percentage_weight_compared_to_portfolio_total_value: 15, percentage_shares_outstanding: 1)
-
-puts "Creating investor stock quarters..."
-
-4.times do |index|
-  InvestorStockQuarter.create!(
-    investor_stock: stock_tepper_agn,
-    designation: "2015Q#{index + 1}",
-    traded_shares_count: 1000,
-    shares_count_at_the_end: 1500,
-    percentage_change_in_owned_shares_from_last_quarter: 50,
-    stock_average_price: 215
-    )
-
-  InvestorStockQuarter.create!(
-    investor_stock: stock_tepper_goog,
-    designation: "2015Q#{index + 1}",
-    traded_shares_count: 1000,
-    shares_count_at_the_end: 1500,
-    percentage_change_in_owned_shares_from_last_quarter: 50,
-    stock_average_price: 215
-    )
-
-  InvestorStockQuarter.create!(
-    investor_stock: stock_tepper_baba,
-    designation: "2015Q#{index + 1}",
-    traded_shares_count: 1000,
-    shares_count_at_the_end: 1500,
-    percentage_change_in_owned_shares_from_last_quarter: 50,
-    stock_average_price: 215
-    )
-end
 
 puts "Finished!"
