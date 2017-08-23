@@ -1,18 +1,14 @@
-<h3>Portfolio Profile</h3>
+<h3 class="investor-show-align">Portfolio Profile</h3>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-2">
 
+<div class="container-custom">
       <%= image_tag @investor.photo, class: "investor-photo" %>
-    </div>
-    <div class="col-xs-3">
       <table class="profile-table">
         <tbody>
           <tr>
             <td>
-              Manager:
+              <strong>Manager:</strong>
             </td>
             <td>
               <%= @investor.first_name %> <%= @investor.last_name %>
@@ -20,7 +16,7 @@
           </tr>
           <tr>
             <td>
-              Fund Name:
+              <strong>Fund Name:</strong>
             </td>
             <td>
              <%= @investor.fund_name %>
@@ -28,7 +24,7 @@
          </tr>
          <tr>
           <td>
-            Portfolio Value:
+            <strong>Portfolio Value:</strong>
           </td>
           <td>
             <%= @investor.portfolio_value %>
@@ -36,67 +32,94 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="col-xs-4">
     <%= render "pie_chart", sectors_pie_chart_data: @sectors_pie_chart_data %>
-  </div>
-</div>
 </div>
 
-
-<table class="highlighter">
+<table class="highlighter stocks">
   <thead>
     <tr>
       <th class="text-left">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'ticker-asc' ? 'ticker-desc' : 'ticker-asc')) do %>
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'ticker-asc' ? 'ticker-desc' : 'ticker-asc')), class: "spaced" do %>
+        <p>
         Ticker
+        </p>
+        <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-left">
+      <span class="spaced">
         Company
+        </span>
       </th>
       <th class="text-left">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sector-asc' ? 'sector-desc' : 'sector-asc')) do %>
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sector-asc' ? 'sector-desc' : 'sector-asc')), class: "spaced" do %>
+        <p>
         Sector
+        </p>
+        <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-right">
+      <span class="spaced">
         Current Price
+        </span>
       </th>
       <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'mcap-desc' ? 'mcap-asc' : 'mcap-desc')) do %>
-        Market Cap  (in $ Mil)
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'mcap-desc' ? 'mcap-asc' : 'mcap-desc')), class: "spaced header-small-font" do %>
+        <p>
+        Market Cap  ($ Mil)
+                </p>
+                <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-right">
-        Shares
+      <span class="spaced">
+        Shared
+      </span>
       </th>
       <th class="text-right">
+            <span class="spaced">
         Value ($1000)
+      </span>
       </th>
       <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')) do %>
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')), class: "spaced" do %>
+        <p>
         % Weight
+                </p>
+                <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')) do %>
-          % Share Change from last Q
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')), class: "spaced header-small-font" do %>
+        <p>
+        % Share Change from last Q
+                </p>
+                <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sharesout-desc' ? 'sharesout-asc' : 'sharesout-desc')) do %>
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sharesout-desc' ? 'sharesout-asc' : 'sharesout-desc')), class: "spaced" do %>
+        <p>
         % Shares Outstanding
+                </p>
+                <i class="fa fa-chevron-down"></i>
         <% end %>
       </th>
       <th class="text-right">
-       <%= link_to investor_path(@investor, sort: (params[:sort] == '3mchange-desc' ? '3mchange-asc' : '3mchange-desc')) do %>
+       <%= link_to investor_path(@investor, sort: (params[:sort] == '3mchange-desc' ? '3mchange-asc' : '3mchange-desc')), class: "spaced" do %>
+       <p>
        3M % Change
+               </p>
+               <i class="fa fa-chevron-down"></i>
        <% end %>
      </th>
      <th class="text-right">
-       <%= link_to investor_path(@investor, sort: (params[:sort] == 'ytdchange-desc' ? 'ytdchange-asc' : 'ytdchange-desc')) do %>
+       <%= link_to investor_path(@investor, sort: (params[:sort] == 'ytdchange-desc' ? 'ytdchange-asc' : 'ytdchange-desc')), class: "spaced" do %>
+       <p>
        YTD % Change
+               </p>
+               <i class="fa fa-chevron-down"></i>
        <% end %>
      </th>
    </tr>

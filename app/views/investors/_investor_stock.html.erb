@@ -1,5 +1,7 @@
 <td class="text-left">
+<strong>
   <%= investor_stock.stock.ticker %>
+  </strong>
 </td>
 <td class="text-left">
   <%= investor_stock.stock.company_name %>
@@ -8,7 +10,7 @@
   <%= investor_stock.stock.sector %>
 </td>
 <td class="text-right">
-  <%= number_with_precision(investor_stock.stock.current_price, precision: 2) %>
+  $<%= number_with_precision(investor_stock.stock.current_price, precision: 2) %>
 </td>
 <td class="text-right">
   <%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
