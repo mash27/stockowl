@@ -10,8 +10,8 @@
           <p class="f-name"><%= investor.fund_name %></p>
           <p class="p-value"><%= investor.portfolio_value %></p>
           <div class="view-btn-container">
-            <%= link_to "Preview", "#", class: "btn-preview view-btn view-btn-white"%>
-            <%= link_to "View More", investor_path(investor), class: "view-btn view-btn-white"%>
+            <%= link_to "Snapshot", "#", class: "btn-preview view-btn view-btn-white"%>
+            <%= link_to "Portfolio", investor_path(investor), class: "btn-portfolio view-btn view-btn-white"%>
           </div>
         </div>
         <div class="content-for-preview hidden">
@@ -19,9 +19,10 @@
             <%= investor.description.split(" ").first(30).join(" ") %>...
           </div>
           <ul>
-            <% investor.stocks.each do |stock| %>
+            <% investor.investor_stocks.top_5.each_with_index do |investor_stock, index| %>
             <li>
-              <%= stock.company_name %>
+              <%= index + 1 %>.
+              <%= investor_stock.stock.company_name %>
             </li>
             <% end %>
           </ul>

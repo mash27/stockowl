@@ -1,33 +1,29 @@
 $(document).ready(function(){
   $('.investor-card-description').on('click', function() {
-    // getDescription($(this).find('h3').text())
     $('.preview-box').removeClass('hidden');
-    changeText(this)
-    changeStocks(this)
-    changeImage(this)
-    changeDescription(this)
-  })
+    changeText(this);
+    changeStocks(this);
+    changeImage(this);
+    changeDescription(this);
+  });
 
   $('.btn-preview').on('click', function(event) {
-    // getDescription($(this).find('h3').text())
-    event.preventDefault()
-    $('.preview-box').removeClass('hidden');
-    changeText(this)
-    changeStocks(this)
-    changeImage(this)
-    changeDescription(this)
+    event.preventDefault();
+    // We rely on the event listener set up on investor-card-description
   })
 
   function changeText(item) {
-    $('#preview .i-name').text($(item).find('h3').text())
-    $('#preview .f-name').text($(item).find('.f-name').text())
-    $('#preview .p-value').text($(item).find('.p-value').text())
-    $('#preview .view-btn').attr('href',($(item).find('.view-btn').attr('href')))
+    $('#preview .i-name').text($(item).find('h3').text());
+    $('#preview .f-name').text($(item).find('.f-name').text());
+    $('#preview .p-value').text($(item).find('.p-value').text());
+
+    var portfolioLink = $(item).find('.btn-portfolio').attr("href");
+    $('#preview .view-btn').attr('href', portfolioLink);
   }
   function changeStocks(item) {
-    $('ul.stocks').html('')
+    $('ul.stocks').html('');
+
     $(item).find('li').each(function(index, item){
-      // console.log($(item).text())
       $('ul.stocks').append('<li>' + $(item).text() + '</li>')
     })
   }
