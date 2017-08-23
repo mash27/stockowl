@@ -22,7 +22,11 @@
   <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
 <td class="text-right">
-  <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
+  <% if investor_stock.percentage_weight_compared_to_portfolio_total_value %>
+    <%= number_with_precision(investor_stock.percentage_weight_compared_to_portfolio_total_value, precision: 2) %>%
+  <% else %>
+    -
+  <% end %>
 </td>
 <td class="text-right <%= stock_change_css_class(investor_stock.investor_stock_quarters.last.percentage_change_in_owned_shares_from_last_quarter) if investor_stock.investor_stock_quarters.last %>">
   <% if investor_stock.investor_stock_quarters.last %>
