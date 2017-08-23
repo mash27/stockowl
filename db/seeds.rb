@@ -406,13 +406,8 @@ InvestorStockQuarter.create!(
     designation: "2017Q3",
     traded_shares_count: 938698,
     shares_count_at_the_end: 938698,
-<<<<<<< HEAD
-    percentage_change_in_owned_shares_from_last_quarter: nil,
-    stock_average_price: 215
-=======
     percentage_change_in_owned_shares_from_last_quarter: "",
     stock_average_price: 256.12
->>>>>>> 06d510a76338ad8d7d67787dec9e448ce5f6f2e4
     )
 
 shares_total_count_AR = 11459921
