@@ -18,6 +18,7 @@
 }
 
 .description {
+  margin-top: 1em;
   font-size: 16px;
   line-height: 30px;
 }
@@ -32,17 +33,16 @@
 .top-items {
   width: 500px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #preview {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 500px;
-  flex-direction: column;
-  height: 500px;
+  height: 100vh;
   img {
     height: 191px;
   }
@@ -63,6 +63,7 @@
   height: 100vh;
   position: fixed;
   width: 500px;
+  padding-left: 1em;
 }
 
 .card-reservation-container {
@@ -182,6 +183,11 @@
   font-size: 28px;
   color: rgba(37, 36, 36, 0.95)
 }
+
+.investor-title {
+  margin-top: 0;
+}
+
 .w3-tag.title {
   background-color: #0D5276 !important;
   padding-bottom: 2px !important;

@@ -39,10 +39,10 @@
   <%= number_with_precision(investor_stock.percentage_shares_outstanding, precision: 2) %>%
 </td>
 <td class="text-right <%= stock_change_css_class(investor_stock.stock.percentage_three_last_months_price_change) %>">
-  <%= investor_stock.stock.percentage_three_last_months_price_change.round(2) %>%
+  <%= number_with_precision(investor_stock.stock.percentage_three_last_months_price_change, precision: 2) %>%
 </td>
 <td class=" text-right <%= stock_change_css_class(investor_stock.stock.percentage_year_to_date_price_change) %>">
-  <%= investor_stock.stock.percentage_year_to_date_price_change.round(2) %>%
+  <%= number_with_precision(investor_stock.stock.percentage_year_to_date_price_change, precision: 2) %>%
 </td>
 
 
