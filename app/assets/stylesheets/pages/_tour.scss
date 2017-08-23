@@ -28,15 +28,11 @@
 .tour-banner {
   color: white;
   text-align: center;
-  font-family: serif;
-  font-weight: bold;
-  height: 500px;
+  height: 450px;
+  width: 100%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-image: image-url('stockowl_home_bg.jpeg');
-  background-color: #0D5276;
-  opacity: 0.9;
   background-size: cover !important;
-  background-color: white;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,21 +42,5 @@
   padding: 300px;
 }
 
-.tour-banner h3 {
-  width: 105%;
-  text-align: left;
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
 
-.tour-banner p {
-  width: 105%;
-  text-align: left;
-  font-size: 20px;
-  font-weight: lighter;
-  color: white;
-  opacity: 0.8;
-  margin-bottom: 30px;
-}
 
