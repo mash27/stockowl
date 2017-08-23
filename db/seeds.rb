@@ -13,15 +13,15 @@ Stock.destroy_all
 
 puts "Creating users..."
 
-user_ash = User.create!({ username: 'Ash', email: 'a.madi27@gmail.com',
+user_ash = User.create!({ username: 'Ash', first_name: 'Ash', last_name: 'M.', email: 'a.madi27@gmail.com',
   photo: 'https://avatars0.githubusercontent.com/u/29701748?v=4',
   password: '123456'})
 
-user_sandi = User.create!({ username: 'Sandi', email: 'shopelite510@gmail.com',
+user_sandi = User.create!({ username: 'Sandi', first_name: 'Sandi', last_name: 'Huynh', email: 'shopelite510@gmail.com',
   photo: "https://avatars0.githubusercontent.com/u/26726874?v=3",
   password: '123456'})
 
-user_ruby = User.create!({ username: 'Ruby', email: 'rubyk70231@gmail.com',
+user_ruby = User.create!({ username: 'Ruby', first_name: 'Ruby', last_name: 'Kim', email: 'rubyk70231@gmail.com',
   photo: 'https://avatars3.githubusercontent.com/u/29701859?v=3',
   password: '123456'})
 
@@ -406,7 +406,7 @@ InvestorStockQuarter.create!(
     designation: "2017Q3",
     traded_shares_count: 938698,
     shares_count_at_the_end: 938698,
-    percentage_change_in_owned_shares_from_last_quarter: ,
+    percentage_change_in_owned_shares_from_last_quarter: nil,
     stock_average_price: 215
     )
 
