@@ -72,20 +72,19 @@
   width: 100%;
 }
 
-.btn btn-primary {
-  color: white;
-  // text-transform: uppercase;
-  padding: 5px 10px;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: bold;
-  background: #0D5276;
-  letter-spacing: 1px;
-  -webkit-transition: all .15s ease;
-  transition: all .15s ease;
+.btn.btn-primary {
+  text-decoration: none;
+  color: #fff;
+  background-color: #0D5276;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer;
   &:hover {
     text-decoration: none;
-    color: #BE3E31;
+    background-color: white;
+    color: #0D5276;
     cursor: pointer;
   }
 }

@@ -1,6 +1,9 @@
+// . {
+//   background-image: image-url('stockowl_bg_static.png');
+// }
 .devise-form {
-  max-width: 400px;
-  margin: 50px auto;
+  width: 400px;
+  margin: 0px auto;
   background-image: linear-gradient(270deg, rgba(2, 83, 115, 0.9) 0%, rgba(2, 83, 115,1) 50%);
   padding: 20px;
   border-radius: 2px;
@@ -59,4 +62,14 @@
       color: white;
     }
   }
+}
+.boolean.optional {
+  opacity: 1 !important;
+}
+
+.form-center {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
