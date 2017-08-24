@@ -2,7 +2,7 @@ class InvestorsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @investors = Investor.all
+    @investors = Investor.all.order(first_name: :asc)
   end
 
   def show

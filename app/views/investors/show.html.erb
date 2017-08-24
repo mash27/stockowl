@@ -232,7 +232,7 @@
                 <div class="row">
                   <div class="col-xs-6">
                     <h4><%= investor_stock.stock.ticker %> ($<%= investor_stock.stock.current_price %>) - <%= @investor.first_name %> <%= @investor.last_name %> holding history</h4>
-                    <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
+                    <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters.order(:designation) } %>
                   </div>
                   <div class="col-xs-6">
                     <%= render partial: "combo_chart", locals: { quarters_combo_chart_data: @quarters_combo_chart_data[index], stock_id: investor_stock.stock.id} %>
