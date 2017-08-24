@@ -9,7 +9,7 @@ skip_before_action :authenticate_user!, only: :create
       contact.user = current_user
     end
     contact.save
-    flash[:notice] = "We've received your message! You will be hearing from us soon!"
+    flash[:notice] = "We've received your message!"
     redirect_to root_path
   end
 

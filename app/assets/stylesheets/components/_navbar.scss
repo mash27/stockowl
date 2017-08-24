@@ -60,8 +60,9 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #DFC822;
+  color: #025373;
   text-decoration: none;
+  font-weight: 600;
 }
 
 /* Dropdown menu */
@@ -78,7 +79,7 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.dropdown-content a:hover {
   background: transparent !important;
   color: black !important;
   text-decoration: none !important;
