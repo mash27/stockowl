@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :user_stocks, only: [:create, :new, :destroy] do
     resources :operations, only: [:create]
   end
+  resources :contacts, only: [:create]
 end

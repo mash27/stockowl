@@ -1,4 +1,4 @@
-<!-- <div class="section" id="index-banner">
+<!--  <div class="section" id="index-banner">
   <div class="container">
     <div class="row">
       <div class="col s12 m9">
@@ -11,90 +11,56 @@
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <h2 class="header">Meet the Team</h2>
-  <p class="caption">We are a team of students from Le Wagon Amsterdam.</p>
-  <div class="s12 center">
-    <div class="image-container">
-    <img src="images/team_c.jpg" style="width:100%;">
-    </div>
-  </div>
-</div>
--->
-
-<!-- <!DOCTYPE html>
-<html>
-<title>Stockowl - About</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>  -->
-
-  <!-- Links (sit on top) -->
-<!-- <div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">HOME</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
-    </div>
-  </div>
 </div> -->
 
 <!-- Header with image -->
+
 <header class="bgimg w3-display-container" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-  </div>
-  <div class="w3-display-middle w3-center">
-    <span class="about-text">About</span>
-  </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-  </div>
+  <!-- <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+</div> -->
+<div class="w3-display-middle w3-center">
+  <span class="about-text">About</span>
+</div>
+<!-- <div class="w3-display-bottomright w3-center w3-padding-large"> -->
+</div>
 </header>
 
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-large">
-
-  <!-- About Container -->
-  <div class="w3-container" id="about">
-    <div class="w3-content" style="max-width:700px">
-      <h5 class="w3-center w3-padding-64"><span class="w3-tag">MEET THE TEAM</span></h5>
-      <%= image_tag "team_c.jpg", :class => "style_image" %>
-      <p class="team_description">SOME CONTENT HERE</p>
-      <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>"SOME NICE QUOTE" lalala.</i></p>
-      <p>quoter's name: jane doe</p>
-    </div>
-
-    <!--     <img src="https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" style="width:100%;max-width:1000px" class="w3-margin-top"> -->
-  </div>
-
-  <!-- Contact/Area Container -->
-  <div class="w3-container" id="where" style="padding-bottom:32px;">
-    <div class="w3-content" style="max-width:700px">
-      Send us a message!</p>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="Date" placeholder="Date and time" required name="date" value="Date"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
-      </form>
-    </div>
-  </div>
-
-  <!-- End page content -->
 </div>
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:600px">
+    <!-- <h5 class="w3-center w3-padding-64"> -->
+    <ul><li><h5 class="team-style"><span class="w3-tag">MEET THE TEAM</span></h5></li>
+      <li><%= image_tag "team_c.jpg", :class => "style_image" %></li>
+      <p class="caption"><li class="team-stockowl">Learn about the Stockowl squad <%= image_tag "network.png", :class => "team-icon" %></li></p>
+      <li class="team-bio"><p>StockOwl was founded by three enthusiastic web developers (Ash Madi, Ruby Kim, and Sandi Huynh) with one basic problem. As individuals, we had our ups and downs investing in the stock market and knew there was a better way of managing our risks while growing our individual wealth. Based out of our modern and beautiful Venice Beach location in sunny California, we work tirelessly to bring you concrete data to help on your journey towards maximum returns. Join us and learn by emulating the masters, today.</p></li>
+      </ul>
+      <div class="w3-panel w3-leftbar w3-light-grey">
+        <p class="team-style brand-color"><i>"An investment in knowledge pays the best interest."</i></p>
+        <p class="team-style brand-color">- Benjamin Franklin</p>
+      </div>
 
-<script>
+      <!--     <img src="https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" style="width:100%;max-width:1000px" class="w3-margin-top"> -->
+    </div>
+
+    <!-- Contact/Area Container -->
+    <div class="w3-container" id="where" style="padding-bottom:32px;">
+      <div class="w3-content" style="max-width:600px">
+        <h5 class="msg-style">Send us a message!</h5>
+        <%= form_tag contacts_path, method: :post do %>
+        <% unless user_signed_in? %>
+        <p><input class="w3-input w3-padding-12 w3-border" type="text" placeholder="Name" required name="contact[name]"></p>
+        <p><input class="w3-input w3-padding-12 w3-border" type="email" placeholder="Email" required name="contact[email]"></p>
+        <% end %>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="contact[message]"></p>
+        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- End page content -->
+  </div>
+
+  <script>
 // Tabbed Menu
 function openMenu(evt, menuName) {
   var i, x, tablinks;
