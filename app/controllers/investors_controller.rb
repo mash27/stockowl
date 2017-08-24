@@ -28,6 +28,8 @@ class InvestorsController < ApplicationController
       [['Quarter', 'Q End Shares', 'Average price']] + processed_investor_stock_quarters
     end
 
+    @investor_stocks_number = @investor.investor_stocks.not_sold_out.count
+
     @investor_stocks = @investor.investor_stocks.joins(:stock)
 
     # SORTING our stocks
@@ -57,9 +59,9 @@ class InvestorsController < ApplicationController
     when 'mcap-desc'
       @investor_stocks = @investor_stocks.order('stocks.market_cap_in_millions DESC')
     when 'weight-asc'
-      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :asc)
+      @investor_stocks = @investor_stocks.order('percentage_weight_compared_to_portfolio_total_value ASC NULLS FIRST')
     when 'weight-desc'
-      @investor_stocks = @investor_stocks.order(percentage_weight_compared_to_portfolio_total_value: :desc)
+      @investor_stocks = @investor_stocks.order('percentage_weight_compared_to_portfolio_total_value DESC NULLS LAST')
     when 'sharesout-asc'
       @investor_stocks = @investor_stocks.order(percentage_shares_outstanding: :asc)
     when 'sharesout-desc'

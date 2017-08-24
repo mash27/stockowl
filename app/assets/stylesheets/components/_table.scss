@@ -39,7 +39,7 @@ table.highlighter {
 }
 
 table.stocks {
-  width: 90vw;
+  width: 95vw;
   margin: 50px auto;
   strong {
     font-weight: 700;
@@ -57,6 +57,15 @@ width: 400px;
 
 }
 
+.profile-table td {
+  padding: 10px 5px !important;
+}
+
+.chevron-group{
+  display: flex;
+    flex-direction: column;
+}
+
 a.spaced {
   text-decoration: none;
   color: black;
@@ -69,13 +78,13 @@ a.spaced {
   }
 }
 
-.header-small-font {
-  font-size: 11px;
-    .fa {
-        font-size: 14px;
-    color: #0D5276;
-  }
-}
+// .header-small-font {
+//   font-size: 11px;
+//     .fa {
+//         font-size: 14px;
+//     color: #0D5276;
+//   }
+// }
 
 .stock-new-buy {
 font-size: 15px;
