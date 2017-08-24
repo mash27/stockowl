@@ -1,5 +1,7 @@
 <td class="text-left">
+<strong>
   <%= investor_stock.stock.ticker %>
+  </strong>
 </td>
 <td class="text-left">
   <%= investor_stock.stock.company_name %>
@@ -8,10 +10,10 @@
   <%= investor_stock.stock.sector %>
 </td>
 <td class="text-right">
-  <%= number_with_precision(investor_stock.stock.current_price, precision: 2) %>
+  $<%= number_with_precision(investor_stock.stock.current_price, precision: 2) %>
 </td>
 <td class="text-right">
-  <%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
+  $<%= number_with_delimiter(investor_stock.stock.market_cap_in_millions.round(0)) %>
 </td>
 <td class="text-right">
   <%=
@@ -19,7 +21,7 @@
   %>
 </td>
 <td class="text-right">
-  <%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
+  $<%= number_with_delimiter(investor_stock.latest_quarter_shares_total_value) %>
 </td>
 <td class="text-right">
   <% if investor_stock.percentage_weight_compared_to_portfolio_total_value %>

@@ -1,133 +1,244 @@
-<h3>Portfolio Profile</h3>
+<h3 class="investor-show-align">Portfolio Profile</h3>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-2">
 
-      <%= image_tag @investor.photo, class: "investor-photo" %>
-    </div>
-    <div class="col-xs-3">
-      <table class="profile-table">
-        <tbody>
-          <tr>
-            <td>
-              Manager:
-            </td>
-            <td>
-              <%= @investor.first_name %> <%= @investor.last_name %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Fund Name:
-            </td>
-            <td>
-             <%= @investor.fund_name %>
-           </td>
-         </tr>
-         <tr>
-          <td>
-            Portfolio Value:
-          </td>
-          <td>
-            <%= @investor.portfolio_value %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-xs-4">
-    <%= render "pie_chart", sectors_pie_chart_data: @sectors_pie_chart_data %>
-  </div>
+<div class="container-custom">
+  <%= image_tag @investor.photo, class: "investor-photo" %>
+  <table class="profile-table">
+    <tbody>
+      <tr>
+        <td>
+          <strong>Manager</strong>
+        </td>
+        <td>
+          <%= @investor.first_name %> <%= @investor.last_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Fund Name</strong>
+        </td>
+        <td>
+         <%= @investor.fund_name %>
+       </td>
+     </tr>
+     <tr>
+      <td>
+        <strong>Portfolio Value</strong>
+      </td>
+      <td>
+        <%= @investor.portfolio_value %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Stocks</strong>
+      </td>
+      <td>
+        <%= @investor_stocks_number %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= render "pie_chart", sectors_pie_chart_data: @sectors_pie_chart_data %>
 </div>
-</div>
 
-
-<table class="highlighter">
+<table class="highlighter stocks">
   <thead>
     <tr>
       <th class="text-left">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'ticker-asc' ? 'ticker-desc' : 'ticker-asc')) do %>
-        Ticker
-        <% end %>
-      </th>
-      <th class="text-left">
-        Company
-      </th>
-      <th class="text-left">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sector-asc' ? 'sector-desc' : 'sector-asc')) do %>
-        Sector
-        <% end %>
-      </th>
-      <th class="text-right">
-        Current Price
-      </th>
-      <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'mcap-desc' ? 'mcap-asc' : 'mcap-desc')) do %>
-        Market Cap  (in $ Mil)
-        <% end %>
-      </th>
-      <th class="text-right">
-        Shares
-      </th>
-      <th class="text-right">
-        Value ($1000)
-      </th>
-      <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')) do %>
-        % Weight
-        <% end %>
-      </th>
-      <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')) do %>
-          % Share Change from last Q
-        <% end %>
-      </th>
-      <th class="text-right">
-        <%= link_to investor_path(@investor, sort: (params[:sort] == 'sharesout-desc' ? 'sharesout-asc' : 'sharesout-desc')) do %>
-        % Shares Outstanding
-        <% end %>
-      </th>
-      <th class="text-right">
-       <%= link_to investor_path(@investor, sort: (params[:sort] == '3mchange-desc' ? '3mchange-asc' : '3mchange-desc')) do %>
-       3M % Change
-       <% end %>
-     </th>
-     <th class="text-right">
-       <%= link_to investor_path(@investor, sort: (params[:sort] == 'ytdchange-desc' ? 'ytdchange-asc' : 'ytdchange-desc')) do %>
-       YTD % Change
-       <% end %>
-     </th>
-   </tr>
- </thead>
- <tbody>
-  <% @investor_stocks.each do |investor_stock| %>
-  <tr>
-    <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
+        <%= link_to investor_path(@investor, sort: (params[:sort] == 'ticker-asc' ? 'ticker-desc' : 'ticker-asc')), class: "spaced" do %>
+        <p>
+          Ticker
+        </p>
+        <% case params[:sort]
+          when 'ticker-desc' %>
+          <i class="fa fa-chevron-down"></i>
+          <% when 'ticker-asc' %>
+          <i class="fa fa-chevron-up"></i>
+          <% else %>
+          <div class="chevron-group">
+            <i class="fa fa-chevron-up"></i>
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <% end %>
+          <% end %>
+        </th>
+        <th class="text-left">
+          <span class="spaced">
+            Company
+          </span>
+        </th>
+        <th class="text-left">
+          <%= link_to investor_path(@investor, sort: (params[:sort] == 'sector-asc' ? 'sector-desc' : 'sector-asc')), class: "spaced" do %>
+          <p>
+            Sector
+          </p>
+          <% case params[:sort]
+            when 'sector-desc' %>
+            <i class="fa fa-chevron-down"></i>
+            <% when 'sector-asc' %>
+            <i class="fa fa-chevron-up"></i>
+            <% else %>
+            <div class="chevron-group">
+              <i class="fa fa-chevron-up"></i>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <% end %>
+            <% end %>
+          </th>
+          <th class="text-right">
+            <span class="spaced">
+              Current Price
+            </span>
+          </th>
+          <th class="text-right">
+            <%= link_to investor_path(@investor, sort: (params[:sort] == 'mcap-desc' ? 'mcap-asc' : 'mcap-desc')), class: "spaced" do %>
+            <p>
+              Market Cap ($1000,000)
+            </p>
+            <% case params[:sort]
+              when 'mcap-desc' %>
+              <i class="fa fa-chevron-down"></i>
+              <% when 'mcap-asc' %>
+              <i class="fa fa-chevron-up"></i>
+              <% else %>
+              <div class="chevron-group">
+                <i class="fa fa-chevron-up"></i>
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <% end %>
+              <% end %>
+            </th>
+            <th class="text-right">
+              <span class="spaced">
+                Number of Shares
+              </span>
+            </th>
+            <th class="text-right">
+              <span class="spaced">
+                Value ($1000)
+              </span>
+            </th>
+            <th class="text-right">
+              <%= link_to investor_path(@investor, sort: (params[:sort] == 'weight-desc' ? 'weight-asc' : 'weight-desc')), class: "spaced" do %>
+              <p>
+                % Weight
+              </p>
+              <% case params[:sort]
+                when 'weight-desc' %>
+                <i class="fa fa-chevron-down"></i>
+                <% when 'weight-asc' %>
+                <i class="fa fa-chevron-up"></i>
+                <% else %>
+                <div class="chevron-group">
+                  <i class="fa fa-chevron-up"></i>
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+                <% end %>
+                <% end %>
+              </th>
+              <th class="text-right">
+                <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')), class: "spaced" do %>
+                <p>
+                  % Share Change from last Q
+                </p>
+                <% case params[:sort]
+                  when 'share-change-desc' %>
+                  <i class="fa fa-chevron-down"></i>
+                  <% when 'share-change-asc' %>
+                  <i class="fa fa-chevron-up"></i>
+                  <% else %>
+                  <div class="chevron-group">
+                    <i class="fa fa-chevron-up"></i>
+                    <i class="fa fa-chevron-down"></i>
+                  </div>
+                  <% end %>
+                  <% end %>
+                </th>
+                <th class="text-right">
+                  <%= link_to investor_path(@investor, sort: (params[:sort] == 'sharesout-desc' ? 'sharesout-asc' : 'sharesout-desc')), class: "spaced" do %>
+                  <p>
+                    % Shares Outstanding
+                  </p>
+                  <% case params[:sort]
+                    when 'sharesout-desc' %>
+                    <i class="fa fa-chevron-down"></i>
+                    <% when 'sharesout-asc' %>
+                    <i class="fa fa-chevron-up"></i>
+                    <% else %>
+                    <div class="chevron-group">
+                      <i class="fa fa-chevron-up"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <% end %>
+                    <% end %>
+                  </th>
+                  <th class="text-right">
+                   <%= link_to investor_path(@investor, sort: (params[:sort] == '3mchange-desc' ? '3mchange-asc' : '3mchange-desc')), class: "spaced" do %>
+                   <p>
+                     3M % Change
+                   </p>
+                   <% case params[:sort]
+                    when '3mchange-desc' %>
+                    <i class="fa fa-chevron-down"></i>
+                    <% when '3mchange-asc' %>
+                    <i class="fa fa-chevron-up"></i>
+                    <% else %>
+                    <div class="chevron-group">
+                      <i class="fa fa-chevron-up"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <% end %>
+                    <% end %>
+                  </th>
+                  <th class="text-right">
+                   <%= link_to investor_path(@investor, sort: (params[:sort] == 'ytdchange-desc' ? 'ytdchange-asc' : 'ytdchange-desc')), class: "spaced" do %>
+                   <p>
+                     YTD % Change
+                   </p>
+                   <% case params[:sort]
+                    when 'ytdchange-desc' %>
+                    <i class="fa fa-chevron-down"></i>
+                    <% when 'ytdchange-asc' %>
+                    <i class="fa fa-chevron-up"></i>
+                    <% else %>
+                    <div class="chevron-group">
+                      <i class="fa fa-chevron-up"></i>
+                      <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <% end %>
+                    <% end %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @investor_stocks.each do |investor_stock| %>
+                <tr>
+                  <%= render partial: "investor_stock", locals: { investor_stock: investor_stock } %>
 
-    <td>
-      <button class="waves-effect waves-light btn modal-trigger brand-blue" href="#modal<%= investor_stock.stock.id %>" onclick="drawVisualizationForModal<%= investor_stock.stock.id %>()">History</button>
-    </td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
+                  <td>
+                    <button class="waves-effect waves-light btn modal-trigger brand-blue w3-button" href="#modal<%= investor_stock.stock.id %>" onclick="drawVisualizationForModal<%= investor_stock.stock.id %>()">History</button>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
 
-<% @investor.investor_stocks.each_with_index do |investor_stock, index| %>
-<!-- Modal Structure -->
-<div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
-  <div class="modal-content">
-    <div class="row">
-      <div class="col-xs-6">
-        <h4><%= investor_stock.stock.ticker %> ($<%= investor_stock.stock.current_price %>) - <%= @investor.first_name %> <%= @investor.last_name %> holding history</h4>
-        <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
-      </div>
-      <div class="col-xs-6">
-        <%= render partial: "combo_chart", locals: { quarters_combo_chart_data: @quarters_combo_chart_data[index], stock_id: investor_stock.stock.id} %>
-      </div>
-    </div>
-  </div>
+            <% @investor.investor_stocks.each_with_index do |investor_stock, index| %>
+            <!-- Modal Structure -->
+            <div id="modal<%= investor_stock.stock.id %>" class="modal bottom-sheet">
+              <div class="modal-content">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <h4><%= investor_stock.stock.ticker %> ($<%= investor_stock.stock.current_price %>) - <%= @investor.first_name %> <%= @investor.last_name %> holding history</h4>
+                    <%= render partial: "holding_history", locals: { investor_stock_quarters: investor_stock.investor_stock_quarters } %>
+                  </div>
+                  <div class="col-xs-6">
+                    <%= render partial: "combo_chart", locals: { quarters_combo_chart_data: @quarters_combo_chart_data[index], stock_id: investor_stock.stock.id} %>
+                  </div>
+                </div>
+              </div>
   <!-- <div class="modal-footer">
     <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
   </div> -->
