@@ -15,18 +15,18 @@
     text-align: center;
     height: 300px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    background-size: cover !important;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .user-description-container {
   display: flex;
   align-items: center;
   max-width: 800px;
-  margin: -144px auto 0 auto;
+  margin: -300px auto 0 auto;
   .img-circle {
     width: 200px;
   }
@@ -36,6 +36,9 @@
     flex: 1 0 auto;
     padding: 20px;
     color: white;
+    .content-item {
+      margin: 0 10px;
+    }
   }
 }
 

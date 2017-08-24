@@ -4,9 +4,7 @@
 <div class="user-description-container">
   <div class="image-container">
     <img alt="User Pic" src=<%= @account.photo %> class="img-circle img-responsive">
-    <%= link_to edit_account_path, class: "edit-pencil" do %>
-    <i class="fa fa-pencil"></i>
-    <% end %>
+
   </div>
 </div>
 
@@ -19,7 +17,7 @@
     <%= f.input :username %>
     <%= f.input :email %>
 
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary"  %>
     <% end %>
 </div>
 
