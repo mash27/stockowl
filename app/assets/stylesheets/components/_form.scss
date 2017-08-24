@@ -1,6 +1,16 @@
 .idea-form {
+  display: flex;
+    align-items: center;
+    justify-content: center;
   input::placeholder {
     color: #0D5276;
+  }
+  .form-control {
+    background-color: white !important;
+    border: 1px solid #0D5276 !important;
+  }
+  .form-group {
+    margin: 0 15px;
   }
 }
 

@@ -1,2 +1,25 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<div class="accounts-show-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 25%), url('<%= image_path 'stockowl_accounts_show_bg.jpg' %>');">
+</div>
+
+<div class="user-description-container">
+  <div class="image-container">
+    <img alt="User Pic" src=<%= @account.photo %> class="img-circle img-responsive">
+    <%= link_to edit_account_path, class: "edit-pencil" do %>
+    <i class="fa fa-pencil"></i>
+    <% end %>
+  </div>
+
+  <div class="content">
+    <div>
+      <p><%= @account.first_name %> <%= @account.last_name %></p>
+    </div>
+    <div>
+      <p>@<%= @account.username.downcase %></p>
+    </div>
+    <div>
+      <p><%= @account.email %></p>
+    </div>
+  </div>
+</div>
+
+
