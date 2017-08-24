@@ -8,7 +8,7 @@
 .faq-banner {
   color: white;
   text-align: center;
-  height: 600px;
+  min-height: 600px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
