@@ -140,7 +140,7 @@
               </th>
               <th class="text-right">
                 <%= link_to investor_path(@investor, sort: (params[:sort] == 'share-change-desc' ? 'share-change-asc' : 'share-change-desc')), class: "spaced" do %>
-                <p>
+                <p class="extra-space">
                   % Share Change from last Q
                 </p>
                 <% case params[:sort]

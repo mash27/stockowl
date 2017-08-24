@@ -1,3 +1,6 @@
+.investors-show {
+  background-image: url('stockowl_bg_static.png')
+}
 .investor-photo {
   height: 150px;
   border-radius: 5px;
@@ -7,9 +10,11 @@
   text-align: left;
 }
 
+
 h3.investor-show-align {
-      width: 80vw;
-    margin: 20px auto;
+  width: 80vw;
+  margin: 20px auto;
+  color: #025373;
 }
 
 .investor-photo {
@@ -18,7 +23,7 @@ h3.investor-show-align {
 
 table.highlighter {
   tr {
-    background-color: $light-gray;
+    background-color: transparent;
     transition: background-color 800ms ease;
     &:hover {
       background-color: #dbe3ff;
@@ -39,6 +44,7 @@ table.highlighter {
 }
 
 table.stocks {
+  font-size: 0.8em;
   width: 95vw;
   margin: 50px auto;
   strong {
@@ -47,7 +53,10 @@ table.stocks {
 }
 
 .profile-table {
-width: 400px;
+  width: 400px;
+  td {
+    font-variant: all-petite-caps;
+  }
 }
 
 .spaced {
@@ -63,7 +72,7 @@ width: 400px;
 
 .chevron-group{
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 a.spaced {
@@ -80,20 +89,24 @@ a.spaced {
 
 // .header-small-font {
 //   font-size: 11px;
-//     .fa {
-//         font-size: 14px;
+//   .fa {
+//     font-size: 14px;
 //     color: #0D5276;
 //   }
 // }
 
 .stock-new-buy {
-font-size: 15px;
+  font-size: 15px;
 }
 
 .stock-sold-out {
-font-size: 15px;
+  font-size: 15px;
 }
 
 td strong {
   font-weight: 700;
+}
+
+.extra-space {
+  width: 100px;
 }
