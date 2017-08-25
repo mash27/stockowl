@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.investor-card-description').on('click', function() {
-    $('.preview-box').removeClass('hidden');
+    // $('.preview-box').removeClass('hidden');
     changeText(this);
     changeStocks(this);
     changeImage(this);
